@@ -1,0 +1,2535 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản Phẩm & Hợp Tác - Hyper Realistic Global</title>
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* --- BẢNG MÀU THƯƠNG HIỆU --- */
+            --header-bg: #FEF0EF;
+            --logo-color: #F09A92;
+            --gold-main: #C89F65;
+            --gold-light: #EADBC0;
+            --text-main: #333333;
+            --text-light: #555555;
+            --text-muted: #999999;
+            --paper-bg: #FFFFFF;
+            --border-color: #F8E1E1;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            background-color: #F5F5F5;
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+        }
+
+
+        /* --- LUXURY LANGUAGE BAR --- */
+        .lang-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 20px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+        .lang-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+
+        .lang-select-container {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        select#lang-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: #FFFFFF;
+            border: 1px solid var(--gold-light);
+            padding: 10px 40px 10px 15px;
+            border-radius: 30px;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            outline: none;
+            transition: all 0.3s ease;
+            min-width: 180px;
+        }
+
+
+        select#lang-select:hover {
+            border-color: var(--logo-color);
+            box-shadow: 0 5px 20px rgba(240, 154, 146, 0.15);
+        }
+
+
+        .lang-select-container::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold-main);
+            pointer-events: none;
+            font-size: 0.7rem;
+        }
+
+
+        /* --- ACTION BUTTONS --- */
+        .action-btn {
+            background: var(--text-main);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .action-btn:hover {
+            background: var(--logo-color);
+        }
+
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: var(--paper-bg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 60px 40px 40px 40px;
+            background-color: var(--header-bg);
+            margin-bottom: 50px;
+            border-bottom: 1px solid rgba(240, 154, 146, 0.2);
+        }
+
+
+        .logo-container {
+            width: 220px;
+            margin: 0 auto 25px auto;
+        }
+
+
+        h1 {
+            color: var(--text-main);
+            font-size: 1.6rem;
+            margin-top: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        .sub-title {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+
+        /* CONTENT */
+        .content-body {
+            padding: 0 70px 70px 70px;
+        }
+
+
+        /* RTL SUPPORT */
+        [dir="rtl"] .content-body {
+            text-align: right;
+        }
+
+        [dir="rtl"] h2::before {
+            margin-left: 15px;
+            margin-right: 0;
+        }
+
+        [dir="rtl"] ul {
+            padding-right: 20px;
+            padding-left: 0;
+        }
+
+        [dir="rtl"] .lang-wrapper {
+            flex-direction: row-reverse;
+        }
+
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            color: var(--text-main);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 1px;
+            background-color: var(--gold-main);
+            margin-right: 15px;
+        }
+
+
+        /* PRODUCT LIST STYLES */
+        .product-item {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 30px;
+            border-bottom: 1px dashed #EEE;
+            padding-bottom: 25px;
+            align-items: center;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-img-wrapper {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #EEE;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .product-img-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-img-wrapper i {
+            font-size: 2rem;
+            color: #ddd;
+        }
+
+        .tech-visual-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .tech-visual {
+            aspect-ratio: 4 / 5;
+            border: 1px solid #EEE;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #FAFAFA;
+        }
+
+        .tech-visual img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+        }
+
+        .swipe-gallery {
+            position: relative;
+            margin: 0 0 20px;
+            border: 1px solid #EEE;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #FFF;
+        }
+
+        .gallery-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .gallery-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .gallery-slide {
+            flex: 0 0 100%;
+            aspect-ratio: 4 / 5;
+            scroll-snap-align: start;
+            background: #FAFAFA;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            pointer-events: none;
+        }
+
+        .gallery-button {
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-main);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+            cursor: pointer;
+            pointer-events: auto;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        .gallery-button:hover {
+            background: var(--logo-color);
+            color: #FFF;
+            transform: scale(1.05);
+        }
+
+        .gallery-counter {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            min-width: 46px;
+            padding: 4px 9px;
+            border-radius: 999px;
+            background: rgba(51, 51, 51, 0.72);
+            color: #FFF;
+            font-size: 0.75rem;
+            text-align: center;
+        }
+
+        .swipe-gallery.single .gallery-nav,
+        .swipe-gallery.single .gallery-counter {
+            display: none;
+        }
+
+
+        .product-info {
+            flex-grow: 1;
+        }
+
+        .product-info h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+
+        .product-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+
+        .spec-item i {
+            color: var(--gold-main);
+            margin-right: 8px;
+            width: 15px;
+            text-align: center;
+        }
+
+
+        .ink-colors {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .color-dot {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #fff;
+            background: #555;
+            text-transform: uppercase;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* GRID FOR PACKAGES */
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .package-card {
+            padding: 30px;
+            border: 1px solid #EEE;
+            background: #FAFAFA;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card:hover {
+            border-color: var(--logo-color);
+            background: #FFF;
+            box-shadow: 0 10px 30px rgba(242, 157, 147, 0.15);
+            transform: translateY(-5px);
+        }
+
+
+        .package-card.highlight {
+            border: 1px solid var(--gold-main);
+            background: #FFFBF0;
+        }
+
+        .package-card.vip {
+            border: 1px solid var(--logo-color);
+            background: #FFF5F5;
+        }
+
+
+        .package-card h3 {
+            color: var(--gold-main);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .package-card.vip h3 {
+            color: var(--logo-color);
+        }
+
+
+        .price-tag {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+
+        /* LISTS */
+        ul.custom-list {
+            padding-left: 0;
+            list-style-type: none;
+            color: var(--text-light);
+        }
+
+        ul.custom-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul.custom-list li::before {
+            content: '•';
+            color: var(--gold-main);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+        /* TEXT STYLES */
+        .highlight-text {
+            color: var(--logo-color);
+            font-weight: 700;
+        }
+
+        .quote-box {
+            font-style: italic;
+            color: #666;
+            border-left: 3px solid var(--gold-light);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        .info-box {
+            background: #FAFAFA;
+            border: 1px solid #EEE;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+
+        /* FLOATING CONTACT BAR */
+        .floating-contact {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
+        }
+
+        .contact-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .phone-btn {
+            background: #4CAF50;
+        }
+
+        .zalo-btn {
+            background: #0068FF;
+            font-family: sans-serif;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        .wa-btn {
+            background: #25D366;
+        }
+
+        .insta-btn {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+
+        /* FOOTER */
+        .footer-note {
+            text-align: center;
+            margin-top: 80px;
+            border-top: 1px solid #EEE;
+            padding-top: 50px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            border-bottom: 1px solid #000;
+            display: inline-block;
+            padding-bottom: 5px;
+            letter-spacing: 2px;
+        }
+
+
+        @media (max-width: 768px) {
+            .content-body {
+                padding: 0 25px 50px 25px;
+            }
+
+            header {
+                padding: 50px 20px;
+            }
+
+            .lang-wrapper {
+                justify-content: space-between;
+                padding: 10px 15px;
+            }
+
+            .action-btn span {
+                display: none;
+            }
+
+            .tech-visual-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-button {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- LUXURY LANGUAGE & TOOL BAR -->
+    <div class="lang-wrapper">
+        <button class="action-btn" onclick="window.print()">
+            <i class="fa-solid fa-print"></i> <span>In / Lưu PDF</span>
+        </button>
+
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="lang-label">
+                <i class="fa-solid fa-globe" style="font-size: 1.2rem;"></i>
+            </div>
+            <div class="lang-select-container">
+                <select id="lang-select">
+                    <optgroup label="Popular / Phổ biến">
+                        <option value="vi">🇻🇳 Tiếng Việt</option>
+                        <option value="en">🇬🇧 English</option>
+                        <option value="hi">🇮🇳 हिन्दी (Hindi)</option>
+                        <option value="kr">🇰🇷 한국어</option>
+                        <option value="jp">🇯🇵 日本語</option>
+                        <option value="zh">🇨🇳 中文</option>
+                    </optgroup>
+                    <optgroup label="Europe / Châu Âu">
+                        <option value="fr">🇫🇷 Français</option>
+                        <option value="de">🇩🇪 Deutsch</option>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="ru">🇷🇺 Русский</option>
+                        <option value="it">🇮🇹 Italiano</option>
+                        <option value="pt">🇵🇹 Português</option>
+                    </optgroup>
+                    <optgroup label="Asia & Middle East">
+                        <option value="th">🇹🇭 ไทย</option>
+                        <option value="id">🇮🇩 Indonesia</option>
+                        <option value="ar">🇶🇦 العربية</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FLOATING CONTACT -->
+    <div class="floating-contact">
+        <a href="tel:0966830779" class="contact-btn phone-btn" title="Call: 0966830779"><i
+                class="fa-solid fa-phone"></i></a>
+        <a href="https://zalo.me/0966830779" target="_blank" class="contact-btn zalo-btn" title="Zalo">Z</a>
+        <a href="https://wa.me/84966830779" target="_blank" class="contact-btn wa-btn" title="WhatsApp"><i
+                class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/levan.academy_hyper.realistic/" target="_blank" class="contact-btn insta-btn"
+            title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <div class="logo-container">
+                <svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+                    <style>
+                        .svg-text {
+                            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                            fill: #F09A92;
+                        }
+
+                        .svg-line {
+                            stroke: #F09A92;
+                            stroke-width: 1;
+                        }
+                    </style>
+                    <text x="85" y="55" font-size="50" font-weight="100" class="svg-text" text-anchor="middle">L</text>
+                    <text x="215" y="55" font-size="50" font-weight="100" class="svg-text" text-anchor="middle">V</text>
+                    <line x1="150" y1="15" x2="150" y2="60" class="svg-line" />
+                    <text x="145" y="38" font-size="8" letter-spacing="2" class="svg-text"
+                        transform="rotate(-90 145,38)" text-anchor="middle">BEAUTY</text>
+                    <text x="150" y="95" font-size="38" font-weight="300" letter-spacing="8" class="svg-text"
+                        text-anchor="middle">LE VAN</text>
+                    <text x="150" y="115" font-size="9" letter-spacing="3" class="svg-text" text-anchor="middle"
+                        opacity="0.8">COSMETIC TATTOO STUDIO</text>
+                </svg>
+            </div>
+
+            <h1 id="doc-title" data-i18n="doc_title">HYPER REALISTIC</h1>
+            <p class="sub-title" id="doc-subtitle" data-i18n="doc_subtitle">SẢN PHẨM, HƯỚNG DẪN & HỢP TÁC TOÀN CẦU</p>
+            <p style="font-size: 0.8rem; color: #999; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px;"
+                id="doc-tagline" data-i18n="doc_tagline">Chất lượng – An toàn – Bền vững</p>
+        </header>
+
+
+        <div class="content-body">
+
+            <!-- 1. GIỚI THIỆU -->
+            <section>
+                <h2 id="h-intro" data-i18n="h_intro">1. Dành Cho Khách Chỉ Có Nhu Cầu Mua Sản Phẩm</h2>
+                <div class="quote-box" id="q-intro" data-i18n="q_intro">
+                    "Chúng tôi hiểu rằng không phải ai cũng muốn tham gia khóa học ngay. Nhiều anh/chị đã có nền tảng
+                    PMU và chỉ đang tìm: Kim ổn định, Máy dễ kiểm soát, Sản phẩm có hướng dẫn đủ dùng."
+                </div>
+                <p id="p-intro" data-i18n="p_intro">Vì vậy, <strong>Hyper Realistic</strong> có chính sách bán sản phẩm
+                    riêng, dành cho
+                    những người chỉ cần công cụ để làm việc.</p>
+            </section>
+
+
+            <!-- 2. CÔNG NGHỆ -->
+            <section>
+                <h2 id="h-tech" data-i18n="h_tech">2. Về Kim & Công Nghệ Hyper Realistic</h2>
+                <p id="p-tech" data-i18n="p_tech">Kim Hyper Realistic được thiết kế dựa trên nghiên cứu chuyên sâu về
+                    da:</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                    <div>
+                        <ul class="custom-list">
+                            <li id="li-tech-1" data-i18n="li_tech_1"><strong>Giới hạn độ sâu 0,3mm</strong></li>
+                            <li id="li-tech-2" data-i18n="li_tech_2">Đưa mực chính xác vào lớp đáy biểu bì</li>
+                            <li id="li-tech-3" data-i18n="li_tech_3">Tạo hiệu ứng “1 đường kim – 1 sợi lông mày tự
+                                nhiên”</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="custom-list">
+                            <li id="li-tech-4" data-i18n="li_tech_4">Giảm tối đa tổn thương da, hạn chế sưng – bong –
+                                xâm lấn</li>
+                            <li id="li-tech-5" data-i18n="li_tech_5">Người có kinh nghiệm PMU có thể làm quen nhanh</li>
+                            <li id="li-tech-6" data-i18n="li_tech_6">Không cần thay đổi nhiều thói quen làm việc</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tech-visual-grid">
+                    <figure class="tech-visual">
+                        <img src="assets/anhmotacongnghekim.PNG" alt="Mô tả công nghệ kim Hyper Realistic">
+                    </figure>
+                    <figure class="tech-visual">
+                        <img src="assets/anhmotachucnangcuamay.PNG" alt="Mô tả chức năng máy Hyper Realistic">
+                    </figure>
+                </div>
+            </section>
+
+
+            <!-- 3. CÁC GÓI SẢN PHẨM -->
+            <section>
+                <h2 id="h-packs" data-i18n="h_packs">3. Các Gói Sản Phẩm</h2>
+                <div class="package-grid">
+                    <!-- GÓI 1 -->
+                    <div class="package-card">
+                        <h3 id="p1-title" data-i18n="p1_title">GÓI 1: NEEDLE ONLY</h3>
+                        <div class="swipe-gallery" data-gallery aria-label="Hình ảnh kim Hyper Realistic">
+                            <div class="gallery-track">
+                                <div class="gallery-slide">
+                                    <img src="assets/kim.PNG" alt="Kim Hyper Realistic">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="assets/kim1.PNG" alt="Chi tiết kim Hyper Realistic">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="assets/kim2.PNG" alt="Hộp kim Hyper Realistic">
+                                </div>
+                            </div>
+                            <div class="gallery-nav">
+                                <button class="gallery-button" type="button" data-gallery-prev aria-label="Ảnh trước">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <button class="gallery-button" type="button" data-gallery-next aria-label="Ảnh sau">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="gallery-counter">1/3</div>
+                        </div>
+                        <span class="price-tag" style="font-size: 1.2rem;" id="p1-price" data-i18n="p1_price">Giá: 100
+                            USD</span>
+                        <ul class="custom-list" style="font-size: 0.9rem;">
+                            <li id="p1-li1" data-i18n="p1_li1">1 hộp kim Hyper Realistic (25 kim)</li>
+                            <li id="p1-li2" data-i18n="p1_li2">Phí ship: 60 USD</li>
+                            <li id="p1-li3" data-i18n="p1_li3">Phí PayPal: 20 USD</li>
+                        </ul>
+                        <div style="text-align: center; border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px; font-weight: 700; color: var(--text-main);"
+                            id="p1-total" data-i18n="p1_total">
+                            TỔNG THANH TOÁN: 180 USD
+                        </div>
+                    </div>
+
+
+                    <!-- GÓI 2 -->
+                    <div class="package-card highlight">
+                        <div
+                            style="position:absolute; top:0; right:0; background:var(--gold-main); color:white; font-size:0.7rem; padding:3px 10px;">
+                            RECOMMENDED</div>
+                        <h3 id="p2-title" data-i18n="p2_title">GÓI 2: TÙY CHỈNH THEO NHU CẦU (MACHINE 2.0 + KIM)</h3>
+                        <div class="swipe-gallery" data-gallery aria-label="Hình ảnh máy Hyper Realistic">
+                            <div class="gallery-track">
+                                <div class="gallery-slide">
+                                    <img src="assets/mayhyper2.JPG" alt="Máy Hyper Realistic phiên bản 2.0">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="assets/mayhyper1.PNG" alt="Chi tiết máy Hyper Realistic">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="assets/mayhyper.PNG" alt="Máy Hyper Realistic">
+                                </div>
+                            </div>
+                            <div class="gallery-nav">
+                                <button class="gallery-button" type="button" data-gallery-prev aria-label="Ảnh trước">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <button class="gallery-button" type="button" data-gallery-next aria-label="Ảnh sau">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="gallery-counter">1/3</div>
+                        </div>
+                        <p style="font-size: 0.92rem; color: #555; margin: 12px 0 14px;" id="p2-intro"
+                            data-i18n="p2_intro">
+                            Gói này được tùy chỉnh hoàn toàn dành cho artist muốn kết hợp dòng máy nâng cấp mới nhất của
+                            chúng tôi với số lượng kim đúng theo nhu cầu.
+                        </p>
+                        <ul class="custom-list" style="font-size: 0.9rem;">
+                            <li class="highlight-text" id="p2-item1-h" data-i18n="p2_item1_h">1. Máy PMU Hyper
+                                Realistic 2.0 mới: 500 USD</li>
+                            <li id="p2-item1-b1" data-i18n="p2_item1_b1">Advanced Linear Drive: Cơ chế mô-men xoắn cao
+                                cho từng nét đi kim thuần, không lệch và siêu chính xác.</li>
+                            <li id="p2-item1-b2" data-i18n="p2_item1_b2">One-Stroke Saturation: Vào màu nhanh hơn, ổn
+                                định hơn, không kéo rít, trượt tay hay rò mực.</li>
+                            <li id="p2-item1-b3" data-i18n="p2_item1_b3">Ergonomic &amp; Smart: Tay cầm chống tê được
+                                thiết kế cho các buổi làm việc dài, trang bị màn hình OLED và sạc Type-C tiện lợi.</li>
+                            <li class="highlight-text" style="margin-top: 12px;" id="p2-item2-h"
+                                data-i18n="p2_item2_h">2. Kim Hyper Realistic: Số lượng tùy chọn</li>
+                            <li id="p2-item2-b1" data-i18n="p2_item2_b1">+ 100 USD cho mỗi bộ 25 kim. (Hãy cho chúng
+                                tôi biết chính xác số lượng bạn cần!)</li>
+                        </ul>
+                        <div style="text-align: left; border-top: 1px dashed var(--gold-main); padding-top: 12px; margin-top: 12px; font-weight: 700; color: var(--gold-main); font-size: 0.9rem;"
+                            id="p2-gift" data-i18n="p2_gift">
+                            🎁 Tặng: Video hướng dẫn điều chỉnh tốc độ và tối ưu máy.
+                        </div>
+                        <div style="text-align: center; border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px; font-style: italic; color: #666; font-size: 0.85rem;"
+                            id="p2-note" data-i18n="p2_note">
+                            📌 Lưu ý: Tổng giá cuối cùng và chi phí vận chuyển sẽ được xác nhận qua tin nhắn trực tiếp
+                            sau khi bạn chốt số lượng kim.
+                        </div>
+                    </div>
+
+
+                    <!-- GÓI 3 -->
+                    <div class="package-card vip">
+                        <h3 id="p3-title" data-i18n="p3_title">GÓI 3: VIP FULL SET</h3>
+                        <div class="swipe-gallery" data-gallery aria-label="Hình ảnh mực Hyper Color">
+                            <div class="gallery-track">
+                                <div class="gallery-slide">
+                                    <img src="assets/muc3.JPG" alt="Mực Hyper Color phiên bản 3">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="assets/muc2.JPG" alt="Bộ mực Hyper Color">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="assets/muc.PNG" alt="Mực Hyper Color">
+                                </div>
+                            </div>
+                            <div class="gallery-nav">
+                                <button class="gallery-button" type="button" data-gallery-prev aria-label="Ảnh trước">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <button class="gallery-button" type="button" data-gallery-next aria-label="Ảnh sau">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="gallery-counter">1/3</div>
+                        </div>
+                        <span class="price-tag" style="color:var(--logo-color); font-size: 1.2rem;" id="p3-price"
+                            data-i18n="p3_price">Giá:
+                            1.000 USD</span>
+                        <ul class="custom-list" style="font-size: 0.9rem;">
+                            <li id="p3-li1" data-i18n="p3_li1">1 máy PMU Hyper Realistic</li>
+                            <li id="p3-li2" data-i18n="p3_li2">2 hộp kim Hyper Realistic (50 kim)</li>
+                            <li id="p3-li3" data-i18n="p3_li3">Full set mực Hyper Color (5 màu)</li>
+                            <li class="highlight-text"
+                                style="margin-top: 10px; border-top: 1px dashed var(--logo-color); padding-top: 10px;"
+                                id="p3-gift-h" data-i18n="p3_gift_h">🎁 VIDEO HƯỚNG DẪN ĐI KÈM:</li>
+                            <li style="font-size: 0.85rem; color: #555;" id="p3-g1" data-i18n="p3_g1">+ Hiểu đúng nguyên
+                                lý kim Hyper
+                                Realistic</li>
+                            <li style="font-size: 0.85rem; color: #555;" id="p3-g2" data-i18n="p3_g2">+ Biết cách điều
+                                chỉnh máy phù hợp
+                                với kim</li>
+                            <li style="font-size: 0.85rem; color: #555;" id="p3-g3" data-i18n="p3_g3">+ Tránh các lỗi
+                                thường gặp khi thao
+                                tác</li>
+                            <li style="font-size: 0.8rem; color: #999; font-style: italic; list-style: none; padding-left: 0; margin-top: 5px;"
+                                id="p3-note" data-i18n="p3_note">*Video mang tính hướng dẫn sử dụng & tham khảo kỹ
+                                thuật, không thay thế
+                                khóa học chuyên sâu.</li>
+                            <li style="margin-top: 10px; border-top: 1px dashed #eee; padding-top: 10px;" id="p3-ship"
+                                data-i18n="p3_ship">
+                                🚚 Phí ship cố định: 100 USD</li>
+                            <li id="p3-fee" data-i18n="p3_fee">💳 Không mất phí PayPal</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- 4. VẬN CHUYỂN -->
+            <section>
+                <h2 id="h-ship" data-i18n="h_ship">4. Vận Chuyển Quốc Tế</h2>
+                <div
+                    style="background: #FAFAFA; padding: 25px; border-radius: 4px; border: 1px solid #EEE; text-align: center;">
+                    <i class="fa-solid fa-plane-departure"
+                        style="font-size: 2rem; color: var(--gold-main); margin-bottom: 15px;"></i>
+                    <h4 style="color: var(--text-main); margin-bottom: 15px; text-transform: uppercase;" id="t-ship-pol"
+                        data-i18n="t_ship_pol">Chính Sách Giao Hàng Toàn Cầu</h4>
+                    <ul class="custom-list" style="font-size: 0.95rem; display: inline-block; text-align: left;">
+                        <li id="li-ship-1" data-i18n="li_ship_1">Thời gian vận chuyển dự kiến: <strong>khoảng 15
+                                ngày</strong></li>
+                        <li id="li-ship-2" data-i18n="li_ship_2">Thời gian có thể thay đổi nhẹ tùy thuộc vào quốc gia và
+                            thủ tục hải quan</li>
+                        <li id="li-ship-3" data-i18n="li_ship_3">Mọi đơn hàng đều được <strong>xác nhận & kiểm tra kỹ
+                                lưỡng</strong> trước khi
+                            gửi đi</li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <!-- 5. HƯỚNG DẪN ĐẶT HÀNG -->
+            <section>
+                <h2 id="h-guide" data-i18n="h_guide">5. Hướng Dẫn Đặt Hàng & Thanh Toán</h2>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                    <div style="text-align: center; padding: 20px; border: 1px solid #eee; background: #fff;">
+                        <span
+                            style="display:inline-block; width:40px; height:40px; line-height:40px; background:var(--text-main); color:white; border-radius:50%; margin-bottom:10px;">1</span>
+                        <h4 style="margin-bottom: 10px;" id="s1-t" data-i18n="s1_t">Nhắn Tin Trực Tiếp</h4>
+                        <p style="font-size: 0.9rem; color: #666;" id="s1-d" data-i18n="s1_d">Qua Instagram, Facebook,
+                            WhatsApp hoặc
+                            Messenger.</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px; border: 1px solid #eee; background: #fff;">
+                        <span
+                            style="display:inline-block; width:40px; height:40px; line-height:40px; background:var(--gold-main); color:white; border-radius:50%; margin-bottom:10px;">2</span>
+                        <h4 style="margin-bottom: 10px;" id="s2-t" data-i18n="s2_t">Gửi Thông Tin</h4>
+                        <p style="font-size: 0.9rem; color: #666;" id="s2-d" data-i18n="s2_d">Họ tên, Địa chỉ, SĐT, Quốc
+                            gia, Mã bưu
+                            chính.</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px; border: 1px solid #eee; background: #fff;">
+                        <span
+                            style="display:inline-block; width:40px; height:40px; line-height:40px; background:var(--logo-color); color:white; border-radius:50%; margin-bottom:10px;">3</span>
+                        <h4 style="margin-bottom: 10px;" id="s3-t" data-i18n="s3_t">Thanh Toán PayPal</h4>
+                        <p style="font-size: 0.9rem; color: #666;" id="s3-d" data-i18n="s3_d">Thanh toán 100% qua PayPal
+                            theo hướng dẫn
+                            gửi riêng.</p>
+                    </div>
+                </div>
+                <div class="info-box" style="margin-top: 20px; background: #FFFBF0; border-color: var(--gold-light);">
+                    <p style="font-size: 0.9rem;" id="guide-note" data-i18n="guide_note">🌱 <strong>Một lưu ý
+                            nhẹ:</strong> Nếu trong quá trình
+                        sử dụng, bạn muốn hiểu sâu hơn về kỹ thuật hoặc làm chủ Hyper Realistic bài bản, các chương
+                        trình đào tạo luôn sẵn sàng khi bạn thực sự cần.</p>
+                </div>
+            </section>
+
+
+            <!-- 6. TUYỂN ĐẠI LÝ -->
+            <section>
+                <h2 id="h-agent" data-i18n="h_agent">6. Tuyển Đại Lý Phân Phối Sản Phẩm</h2>
+                <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <p style="margin-bottom: 15px;" id="p-agent" data-i18n="p_agent">Hyper Realistic hiện đang mở
+                            rộng hệ thống phân
+                            phối toàn cầu. Chúng tôi tìm kiếm:</p>
+                        <ul class="custom-list">
+                            <li id="li-ag-1" data-i18n="li_ag_1">Đại lý phân phối sản phẩm</li>
+                            <li id="li-ag-2" data-i18n="li_ag_2">Đại diện quốc gia độc quyền</li>
+                            <li id="li-ag-3" data-i18n="li_ag_3">Studio / Học viện có năng lực phát triển thị trường
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        style="flex: 1; min-width: 300px; background: #FEF9F9; padding: 25px; border-radius: 4px; border-left: 3px solid var(--logo-color);">
+                        <h4 style="color: var(--logo-color); margin-bottom: 10px;" id="t-ben" data-i18n="t_ben">Quyền
+                            Lợi Đối Tác</h4>
+                        <ul class="custom-list" style="font-size: 0.9rem;">
+                            <li id="li-ben-1" data-i18n="li_ben_1">Chính sách giá & phân phối riêng</li>
+                            <li id="li-ben-2" data-i18n="li_ben_2">Hỗ trợ hình ảnh & định vị thương hiệu</li>
+                            <li id="li-ben-3" data-i18n="li_ben_3">Đồng hành phát triển dài hạn cùng Hyper Realistic
+                            </li>
+                        </ul>
+                        <p style="margin-top: 15px; font-weight: 600; font-size: 0.9rem;" id="cta-agent"
+                            data-i18n="cta_agent">📩 Vui lòng
+                            liên hệ trực tiếp để trao đổi chi tiết.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- 7. LỘ TRÌNH PHÁT TRIỂN (NEW) -->
+            <section>
+                <h2 id="h-roadmap" data-i18n="h_roadmap">7. Lộ Trình Phát Triển Cao Cấp</h2>
+                <p style="font-size: 1.1rem; color: var(--gold-main); margin-bottom: 20px; font-weight: 600;"
+                    id="sub-roadmap" data-i18n="sub_roadmap">Trở thành Nhà đào tạo Hyper Realistic tại quốc gia của bạn
+                </p>
+
+                <p style="margin-bottom: 20px;" id="txt-roadmap-1" data-i18n="txt_roadmap_1">Hyper Realistic không chỉ
+                    dừng lại ở việc đào tạo kỹ
+                    thuật, mà hướng đến xây dựng <strong>một hệ thống nhà đào tạo & đại diện quốc gia chất lượng
+                        cao</strong> trên toàn cầu.</p>
+
+                <div
+                    style="background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 4px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+                    <p style="margin-bottom: 15px;" id="txt-roadmap-cond" data-i18n="txt_roadmap_cond">Sau khi hoàn
+                        thành khóa học Hyper Realistic
+                        cao cấp và đáp ứng các tiêu chí chuyên môn, học viên có cơ hội được xem xét để:</p>
+                    <ul class="custom-list">
+                        <li id="li-rm-1" data-i18n="li_rm_1">Trở thành <strong>Nhà đào tạo Hyper Realistic</strong> được
+                            công nhận</li>
+                        <li id="li-rm-2" data-i18n="li_rm_2">Được giới thiệu chính thức trên hệ thống Le Van Academy
+                        </li>
+                        <li id="li-rm-3" data-i18n="li_rm_3">Đại diện giảng dạy Hyper Realistic tại quốc gia hoặc khu
+                            vực bạn sinh sống</li>
+                    </ul>
+                    <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ddd;">
+                        <p style="font-style: italic; color: #666;" id="txt-roadmap-for" data-i18n="txt_roadmap_for">👉
+                            Đây là lộ trình dành cho
+                            những học viên: Có tay nghề vững, Định hướng phát triển lâu dài, Muốn xây dựng vị thế chuyên
+                            gia.</p>
+                    </div>
+                </div>
+
+
+                <h3 style="color: var(--logo-color); margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase;"
+                    id="h-recruit" data-i18n="h_recruit">🌍 Tuyển Đại Diện Quốc Gia & Nhà Đào Tạo Độc Quyền</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    <div>
+                        <p style="margin-bottom: 10px;" id="p-recruit" data-i18n="p_recruit">Le Van Academy hiện đang mở
+                            tuyển chọn:</p>
+                        <ul class="custom-list">
+                            <li id="li-rc-1" data-i18n="li_rc_1">Nhà đào tạo Hyper Realistic</li>
+                            <li id="li-rc-2" data-i18n="li_rc_2">Đại diện quốc gia độc quyền cho sản phẩm & đào tạo</li>
+                        </ul>
+                    </div>
+                    <div
+                        style="background: #FFFBF0; padding: 20px; border-radius: 4px; border: 1px solid var(--gold-light);">
+                        <h4 style="color: var(--gold-main); margin-bottom: 10px;" id="h-benefit" data-i18n="h_benefit">
+                            Quyền Lợi Đối Tác Đào
+                            Tạo</h4>
+                        <ul class="custom-list" style="font-size: 0.9rem;">
+                            <li id="li-bf-1" data-i18n="li_bf_1">Được công nhận là Trainer/Representative chính thức
+                            </li>
+                            <li id="li-bf-2" data-i18n="li_bf_2">Được giới thiệu trên các kênh truyền thông toàn cầu
+                            </li>
+                            <li id="li-bf-3" data-i18n="li_bf_3">Nhận hỗ trợ về: Nội dung đào tạo, Hình ảnh thương hiệu,
+                                Chiến lược địa
+                                phương</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 25px; border-left: 3px solid var(--logo-color);">
+                    <p style="font-size: 0.9rem;" id="note-crit" data-i18n="note_crit">📌 <strong>Lưu ý:</strong> Việc
+                        công nhận nhà đào
+                        tạo/đại diện quốc gia không tự động, mà dựa trên: Trình độ kỹ thuật, Đạo đức nghề nghiệp và Năng
+                        lực phát triển cộng đồng.</p>
+                </div>
+
+                <p style="text-align: center; margin-top: 30px; font-weight: 600; font-size: 1.1rem; color: var(--text-main);"
+                    id="msg-open" data-i18n="msg_open">🤍 “Hyper Realistic không tìm số lượng. Chúng tôi tìm những người
+                    phù hợp để đi đường
+                    dài cùng nhau.”</p>
+            </section>
+
+
+            <!-- KẾT LUẬN -->
+            <div class="footer-note">
+                <p style="font-size: 1.1rem; font-style: italic; color: var(--text-main); margin-bottom: 20px;"
+                    id="footer-q" data-i18n="footer_q">
+                    “Hyper Realistic tôn trọng mọi lựa chọn. Dù bạn chỉ mua sản phẩm hay muốn đi đường dài cùng chúng
+                    tôi, chúng tôi luôn hướng tới chất lượng – an toàn – giá trị bền vững.”
+                </p>
+                <br>
+                <div class="signature">LE VAN ACADEMY</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>        const translations = {
+            vi: {
+                doc_subtitle: "SẢN PHẨM, HƯỚNG DẪN & HỢP TÁC TOÀN CẦU",
+                doc_tagline: "Chất lượng – An toàn – Bền vững",
+                h_intro: "1. Dành Cho Khách Chỉ Có Nhu Cầu Mua Sản Phẩm",
+                q_intro: "\"Chúng tôi hiểu rằng không phải ai cũng muốn tham gia khóa học ngay. Nhiều anh/chị đã có nền tảng PMU và chỉ đang tìm: Kim ổn định, Máy dễ kiểm soát, Sản phẩm có hướng dẫn đủ dùng.\"",
+                p_intro: "Vì vậy, <strong>Hyper Realistic</strong> có chính sách bán sản phẩm riêng, dành cho những người chỉ cần công cụ để làm việc.",
+                h_tech: "2. Về Kim & Công Nghệ Hyper Realistic",
+                p_tech: "Kim Hyper Realistic được thiết kế dựa trên nghiên cứu chuyên sâu về da:",
+                li_tech_1: "<strong>Giới hạn độ sâu 0,3mm</strong>",
+                li_tech_2: "Đưa mực chính xác vào lớp đáy biểu bì",
+                li_tech_3: "Tạo hiệu ứng “1 đường kim – 1 sợi lông mày tự nhiên”",
+                li_tech_4: "Giảm tối đa tổn thương da, hạn chế sưng – bong – xâm lấn",
+                li_tech_5: "Người có kinh nghiệm PMU có thể làm quen nhanh",
+                li_tech_6: "Không cần thay đổi nhiều thói quen làm việc",
+                h_packs: "3. Các Gói Sản Phẩm",
+                p1_title: "GÓI 1: NEEDLE ONLY",
+                p1_price: "Giá: 100 USD",
+                p1_li1: "1 hộp kim Hyper Realistic (25 kim)",
+                p1_li2: "Phí ship: 60 USD",
+                p1_li3: "Phí PayPal: 20 USD",
+                p1_total: "TỔNG THANH TOÁN: 180 USD",
+                p2_title: "GÓI 2: TÙY CHỈNH THEO NHU CẦU (MACHINE 2.0 + KIM)",
+                p2_intro: "Gói này được tùy chỉnh hoàn toàn dành cho artist muốn kết hợp dòng máy nâng cấp mới nhất của chúng tôi với số lượng kim đúng theo nhu cầu.",
+                p2_item1_h: "1. Máy PMU Hyper Realistic 2.0 mới: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: Cơ chế mô-men xoắn cao cho từng nét đi kim thuần, không lệch và siêu chính xác.",
+                p2_item1_b2: "One-Stroke Saturation: Vào màu nhanh hơn, ổn định hơn, không kéo rít, trượt tay hay rò mực.",
+                p2_item1_b3: "Ergonomic & Smart: Tay cầm chống tê được thiết kế cho các buổi làm việc dài, trang bị màn hình OLED và sạc Type-C tiện lợi.",
+                p2_item2_h: "2. Kim Hyper Realistic: Số lượng tùy chọn",
+                p2_item2_b1: "+ 100 USD cho mỗi bộ 25 kim. (Hãy cho chúng tôi biết chính xác số lượng bạn cần!)",
+                p2_gift: "🎁 Tặng: Video hướng dẫn điều chỉnh tốc độ và tối ưu máy.",
+                p2_note: "📌 Lưu ý: Tổng giá cuối cùng và chi phí vận chuyển sẽ được xác nhận qua tin nhắn trực tiếp sau khi bạn chốt số lượng kim.",
+                p3_title: "GÓI 3: VIP FULL SET",
+                p3_price: "Giá: 1.000 USD",
+                p3_li1: "1 máy PMU Hyper Realistic",
+                p3_li2: "2 hộp kim Hyper Realistic (50 kim)",
+                p3_li3: "Full set mực Hyper Color (5 màu)",
+                p3_gift_h: "🎁 VIDEO HƯỚNG DẪN ĐI KÈM:",
+                p3_g1: "+ Hiểu đúng nguyên lý kim Hyper Realistic",
+                p3_g2: "+ Biết cách điều chỉnh máy phù hợp với kim",
+                p3_g3: "+ Tránh các lỗi thường gặp khi thao tác",
+                p3_note: "*Video mang tính hướng dẫn sử dụng & tham khảo kỹ thuật, không thay thế khóa học chuyên sâu.",
+                p3_ship: "🚚 Phí ship cố định: 100 USD",
+                p3_fee: "💳 Không mất phí PayPal",
+                h_ship: "4. Vận Chuyển Quốc Tế",
+                t_ship_pol: "Chính Sách Giao Hàng Toàn Cầu",
+                li_ship_1: "Thời gian vận chuyển dự kiến: <strong>khoảng 15 ngày</strong>",
+                li_ship_2: "Thời gian có thể thay đổi nhẹ tùy thuộc vào quốc gia và thủ tục hải quan",
+                li_ship_3: "Mọi đơn hàng đều được <strong>xác nhận & kiểm tra kỹ lưỡng</strong> trước khi gửi đi",
+                h_guide: "5. Hướng Dẫn Đặt Hàng & Thanh Toán",
+                s1_t: "Nhắn Tin Trực Tiếp", s1_d: "Qua Instagram, Facebook, WhatsApp hoặc Messenger.",
+                s2_t: "Gửi Thông Tin", s2_d: "Họ tên, Địa chỉ, SĐT, Quốc gia, Mã bưu chính.",
+                s3_t: "Thanh Toán PayPal", s3_d: "Thanh toán 100% qua PayPal theo hướng dẫn gửi riêng.",
+                guide_note: "🌱 <strong>Một lưu ý nhẹ:</strong> Nếu trong quá trình sử dụng, bạn muốn hiểu sâu hơn về kỹ thuật hoặc làm chủ Hyper Realistic bài bản, các chương trình đào tạo luôn sẵn sàng khi bạn thực sự cần.",
+                h_agent: "6. Tuyển Đại Lý Phân Phối Sản Phẩm",
+                p_agent: "Hyper Realistic hiện đang mở rộng hệ thống phân phối toàn cầu. Chúng tôi tìm kiếm:",
+                li_ag_1: "Đại lý phân phối sản phẩm",
+                li_ag_2: "Đại diện quốc gia độc quyền",
+                li_ag_3: "Studio / Học viện có năng lực phát triển thị trường",
+                t_ben: "Quyền Lợi Đối Tác",
+                li_ben_1: "Chính sách giá & phân phối riêng",
+                li_ben_2: "Hỗ trợ hình ảnh & định vị thương hiệu",
+                li_ben_3: "Đồng hành phát triển dài hạn cùng Hyper Realistic",
+                cta_agent: "📩 Vui lòng liên hệ trực tiếp để trao đổi chi tiết.",
+                h_roadmap: "7. Lộ Trình Phát Triển Cao Cấp",
+                sub_roadmap: "Trở thành Nhà đào tạo Hyper Realistic tại quốc gia của bạn",
+                txt_roadmap_1: "Hyper Realistic không chỉ dừng lại ở việc đào tạo kỹ thuật, mà hướng đến xây dựng <strong>một hệ thống nhà đào tạo & đại diện quốc gia chất lượng cao</strong> trên toàn cầu.",
+                txt_roadmap_cond: "Sau khi hoàn thành khóa học Hyper Realistic cao cấp và đáp ứng các tiêu chí chuyên môn, học viên có cơ hội được xem xét để:",
+                li_rm_1: "Trở thành <strong>Nhà đào tạo Hyper Realistic</strong> được công nhận",
+                li_rm_2: "Được giới thiệu chính thức trên hệ thống Le Van Academy",
+                li_rm_3: "Đại diện giảng dạy Hyper Realistic tại quốc gia hoặc khu vực bạn sinh sống",
+                txt_roadmap_for: "👉 Đây là lộ trình dành cho những học viên: Có tay nghề vững, Định hướng phát triển lâu dài, Muốn xây dựng vị thế chuyên gia.",
+                h_recruit: "🌍 Tuyển Đại Diện Quốc Gia & Nhà Đào Tạo Độc Quyền",
+                p_recruit: "Le Van Academy hiện đang mở tuyển chọn:",
+                li_rc_1: "Nhà đào tạo Hyper Realistic",
+                li_rc_2: "Đại diện quốc gia độc quyền cho sản phẩm & đào tạo",
+                h_benefit: "Quyền Lợi Đối Tác Đào Tạo",
+                li_bf_1: "Được công nhận là Trainer/Representative chính thức",
+                li_bf_2: "Được giới thiệu trên các kênh truyền thông toàn cầu",
+                li_bf_3: "Nhận hỗ trợ về: Nội dung đào tạo, Hình ảnh thương hiệu, Chiến lược địa phương",
+                note_crit: "📌 <strong>Lưu ý:</strong> Việc công nhận nhà đào tạo/đại diện quốc gia không tự động, mà dựa trên: Trình độ kỹ thuật, Đạo đức nghề nghiệp và Năng lực phát triển cộng đồng.",
+                msg_open: "🤍 “Hyper Realistic không tìm số lượng. Chúng tôi tìm những người phù hợp để đi đường dài cùng nhau.”",
+                footer_q: "“Hyper Realistic tôn trọng mọi lựa chọn. Dù bạn chỉ mua sản phẩm hay muốn đi đường dài cùng chúng tôi, chúng tôi luôn hướng tới chất lượng – an toàn – giá trị bền vững.”"
+            },
+            en: {
+                doc_subtitle: "PRODUCTS, GUIDES & GLOBAL PARTNERSHIP",
+                doc_tagline: "Quality – Safety – Sustainability",
+                h_intro: "1. For Product-Only Buyers",
+                q_intro: "\"We understand that not everyone wants to join a course immediately. Many professionals just need: Stable needles, Controllable machines, and Products with sufficient instructions.\"",
+                p_intro: "Therefore, <strong>Hyper Realistic</strong> has a separate product sales policy for those who just need tools to work.",
+                h_tech: "2. About Hyper Realistic Needles & Tech",
+                p_tech: "Hyper Realistic needles are designed based on deep skin research:",
+                li_tech_1: "<strong>0.3mm depth limit</strong>",
+                li_tech_2: "Deposits ink precisely into the basal layer",
+                li_tech_3: "Creates \"1 stroke – 1 natural hair\" effect",
+                li_tech_4: "Minimizes skin trauma, swelling, and peeling",
+                li_tech_5: "Experienced PMU artists can adapt quickly",
+                li_tech_6: "No need to change working habits much",
+                h_packs: "3. Product Packages",
+                p1_title: "PACKAGE 1: NEEDLE ONLY",
+                p1_price: "Price: 100 USD",
+                p1_li1: "1 box of Hyper Realistic needles (25 pcs)",
+                p1_li2: "Shipping fee: 60 USD",
+                p1_li3: "PayPal fee: 20 USD",
+                p1_total: "TOTAL PAYMENT: 180 USD",
+                p2_title: "PACKAGE 2: CUSTOM ON-DEMAND (MACHINE 2.0 + NEEDLES)",
+                p2_intro: "This package is fully customizable for artists who want to pair our latest upgraded machine with their desired quantity of needles.",
+                p2_item1_h: "1. New Hyper Realistic PMU Machine 2.0: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: High-torque mechanism for pure, zero-drift, and ultra-precise strokes.",
+                p2_item1_b2: "One-Stroke Saturation: Faster, more stable coloring with zero dragging, slipping, or ink leakage.",
+                p2_item1_b3: "Ergonomic & Smart: Anti-numbness grip designed for long sessions, equipped with an OLED screen and convenient Type-C charging.",
+                p2_item2_h: "2. Hyper Realistic Needles: Custom Quantity",
+                p2_item2_b1: "+ 100 USD for every set of 25 needles. (Tell us the exact quantity you need!)",
+                p2_gift: "🎁 Gift: Speed adjustment & machine optimization guide video.",
+                p2_note: "📌 Note: The final total price and shipping cost will be confirmed via direct message once you finalize your needle quantity.",
+                p3_title: "PACKAGE 3: VIP FULL SET",
+                p3_price: "Price: 1,000 USD",
+                p3_li1: "1 Hyper Realistic PMU Machine",
+                p3_li2: "2 boxes of Hyper Realistic needles (50 pcs)",
+                p3_li3: "Full set Hyper Color Ink (5 colors)",
+                p3_gift_h: "🎁 INCLUDED GUIDE VIDEOS:",
+                p3_g1: "+ Understand needle principles",
+                p3_g2: "+ Adjust machine speed",
+                p3_g3: "+ Avoid common mistakes",
+                p3_note: "*Videos are for guidance only.",
+                p3_ship: "🚚 Fixed shipping fee: 100 USD",
+                p3_fee: "💳 No PayPal fee",
+                h_ship: "4. International Shipping",
+                t_ship_pol: "Global Delivery Policy",
+                li_ship_1: "Estimated delivery: <strong>~15 days</strong>",
+                li_ship_2: "Time varies by country and customs",
+                li_ship_3: "Orders are <strong>confirmed & checked</strong> before sending",
+                h_guide: "5. How to Order",
+                s1_t: "Message Us", s1_d: "Via Instagram, WhatsApp, etc.",
+                s2_t: "Send Info", s2_d: "Name, Address, Phone.",
+                s3_t: "PayPal Payment", s3_d: "100% via PayPal.",
+                guide_note: "🌱 <strong>Note:</strong> Training programs are always ready if you need to master the technique.",
+                h_agent: "6. Product Distribution Recruitment",
+                p_agent: "We are looking for global product distributors:",
+                li_ag_1: "Product distributors",
+                li_ag_2: "Exclusive national representatives",
+                li_ag_3: "Studios / Academies",
+                t_ben: "Partner Benefits",
+                li_ben_1: "Exclusive pricing & distribution",
+                li_ben_2: "Brand image support",
+                li_ben_3: "Long-term development",
+                cta_agent: "📩 Contact us for details.",
+                h_roadmap: "7. Premium Development Roadmap",
+                sub_roadmap: "Become a Hyper Realistic Trainer in Your Country",
+                txt_roadmap_1: "Hyper Realistic aims to build <strong>a system of high-quality trainers & national representatives</strong> globally.",
+                txt_roadmap_cond: "After completing the advanced course and meeting criteria, students can be considered to:",
+                li_rm_1: "Become a <strong>Recognized Hyper Realistic Trainer</strong>",
+                li_rm_2: "Be officially introduced on Le Van Academy system",
+                li_rm_3: "Represent Hyper Realistic teaching in your country/region",
+                txt_roadmap_for: "👉 For students with solid skills, long-term vision, and expert mindset.",
+                h_recruit: "🌍 National Representative & Exclusive Trainer Recruitment",
+                p_recruit: "Le Van Academy is opening selection for:",
+                li_rc_1: "Hyper Realistic Trainers",
+                li_rc_2: "Exclusive National Representatives for products & training",
+                h_benefit: "Training Partner Benefits",
+                li_bf_1: "Recognized as official Trainer/Representative",
+                li_bf_2: "Featured on global media channels",
+                li_bf_3: "Support on: Training content, Brand image, Local strategy",
+                note_crit: "📌 <strong>Note:</strong> Recognition is not automatic, but based on: Skills, Ethics, and Community development capacity.",
+                msg_open: "🤍 “Hyper Realistic does not seek quantity. We look for suitable people to go the long way together.”",
+                footer_q: "“Hyper Realistic respects every choice. We always aim for quality – safety – sustainable value.”"
+            },
+            kr: {
+                doc_subtitle: "제품, 가이드 및 글로벌 파트너십",
+                doc_tagline: "품질 – 안전 – 지속 가능성",
+                h_intro: "1. 제품 구매 전용 고객용",
+                q_intro: "\"모든 사람이 즉시 교육을 원하는 것은 아니라는 점을 이해합니다. 많은 전문가들은 안정적인 니들, 제어 가능한 머신, 충분한 가이드가 포함된 제품만을 찾고 있습니다.\"",
+                p_intro: "따라서 <strong>Hyper Realistic</strong>은 도구만 필요로 하는 분들을 위해 별도의 제품 판매 정책을 운영하고 있습니다.",
+                h_tech: "2. 하이퍼 리얼리스틱 니들 및 기술 정보",
+                p_tech: "하이퍼 리얼리스틱 니들은 심층적인 피부 연구를 바탕으로 설계되었습니다.",
+                li_tech_1: "<strong>0.3mm 깊이 제한</strong>",
+                li_tech_2: "기저층에 정밀하게 색소 주입",
+                li_tech_3: "“1회 스트로크 – 1개의 자연스러운 눈썹 결” 효과",
+                li_tech_4: "피부 트라우마, 부기 및 탈각 최소화",
+                li_tech_5: "숙련된 PMU 아티스트는 빠르게 적응 가능",
+                li_tech_6: "기존 작업 습관을 크게 바꿀 필요 없음",
+                h_packs: "3. 제품 패키지",
+                p1_title: "패키지 1: 니들 전용",
+                p1_price: "가격: 100 USD",
+                p1_li1: "하이퍼 리얼리스틱 니들 1박스 (25개)",
+                p1_li2: "배송비: 60 USD",
+                p1_li3: "PayPal 수수료: 20 USD",
+                p1_total: "총 결제 금액: 180 USD",
+                p2_title: "패키지 2: 맞춤 주문형 (MACHINE 2.0 + NEEDLES)",
+                p2_intro: "이 패키지는 최신 업그레이드된 머신과 원하는 수량의 니들을 함께 구성하고 싶은 아티스트를 위해 완전히 맞춤 설정할 수 있습니다.",
+                p2_item1_h: "1. 새로운 Hyper Realistic PMU Machine 2.0: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: 순수하고 드리프트 없는 초정밀 스트로크를 위한 고토크 메커니즘.",
+                p2_item1_b2: "One-Stroke Saturation: 끌림, 미끄러짐, 잉크 누수 없이 더 빠르고 안정적인 컬러링.",
+                p2_item1_b3: "Ergonomic & Smart: 장시간 시술에 적합한 저림 방지 그립, OLED 화면과 편리한 Type-C 충전을 탑재.",
+                p2_item2_h: "2. Hyper Realistic Needles: 맞춤 수량",
+                p2_item2_b1: "+ 25개입 한 세트마다 100 USD 추가. (필요한 정확한 수량을 알려주세요!)",
+                p2_gift: "🎁 증정: 속도 조절 및 머신 최적화 가이드 영상.",
+                p2_note: "📌 참고: 최종 총액과 배송비는 니들 수량을 확정한 후 직접 메시지로 안내드립니다.",
+                p3_title: "패키지 3: VIP 풀 세트",
+                p3_price: "가격: 1,000 USD",
+                p3_li1: "하이퍼 리얼리스틱 PMU 머신 1대",
+                p3_li2: "하이퍼 리얼리스틱 니들 2박스 (50개)",
+                p3_li3: "하이퍼 컬러 색소 풀 세트 (5색)",
+                p3_gift_h: "🎁 가이드 영상 포함:",
+                p3_g1: "+ 니들 원리 이해",
+                p3_g2: "+ 머신 속도 조절 방법",
+                p3_g3: "+ 흔한 실수 방지법",
+                p3_note: "*영상은 참고용 가이드입니다.",
+                p3_ship: "🚚 고정 배송비: 100 USD",
+                p3_fee: "💳 PayPal 수수료 없음",
+                h_ship: "4. 국제 배송",
+                t_ship_pol: "전 세계 배송 정책",
+                li_ship_1: "예상 배송 기간: <strong>약 15일</strong>",
+                li_ship_2: "국가 및 세관 절차에 따라 다소 차이가 있을 수 있습니다.",
+                li_ship_3: "모든 주문은 발송 전 <strong>꼼꼼하게 확인 및 점검</strong>됩니다.",
+                h_guide: "5. 주문 및 결제 방법",
+                s1_t: "직접 메시지 문의", s1_d: "인스타그램, WhatsApp 등을 통해 문의주세요.",
+                s2_t: "정보 전송", s2_d: "성명, 주소, 전화번호.",
+                s3_t: "PayPal 결제", s3_d: "안내에 따라 PayPal로 100% 결제.",
+                guide_note: "🌱 <strong>참고:</strong> 기술을 완벽히 마스터하고 싶다면 교육 프로그램이 준비되어 있습니다.",
+                h_agent: "6. 제품 유통 파트너 모집",
+                p_agent: "글로벌 제품 유통 파트너를 찾고 있습니다.",
+                li_ag_1: "제품 대리점",
+                li_ag_2: "국가별 독점 대리인",
+                li_ag_3: "스튜디오 / 아카데미",
+                t_ben: "파트너 혜택",
+                li_ben_1: "독점 가격 및 유통권",
+                li_ben_2: "브랜드 이미지 지원",
+                li_ben_3: "장기적인 발전 도모",
+                cta_agent: "📩 자세한 내용은 문의주세요.",
+                h_roadmap: "7. 프리미엄 발전 로드맵",
+                sub_roadmap: "귀하의 국가에서 하이퍼 리얼리스틱 트레이너가 되세요",
+                txt_roadmap_1: "하이퍼 리얼리스틱은 전 세계적으로 <strong>고품질 트레이너 및 국가 대표 시스템</strong> 구축을 목표로 합니다.",
+                txt_roadmap_cond: "심화 과정을 수료하고 기준을 충족한 수강생은 다음과 같은 기회를 가질 수 있습니다.",
+                li_rm_1: "하이퍼 리얼리스틱 <strong>인증 트레이너</strong> 선정",
+                li_rm_2: "Le Van Academy 시스템 내 공식 소개",
+                li_rm_3: "해당 국가/지역의 하이퍼 리얼리스틱 교육 대표",
+                txt_roadmap_for: "👉 실력을 갖추고 장기적인 비전을 가진 전문가를 위한 코스입니다.",
+                h_recruit: "🌍 국가 대표 및 독점 트레이너 모집",
+                p_recruit: "Le Van Academy에서 다음을 모집합니다.",
+                li_rc_1: "하이퍼 리얼리스틱 트레이너",
+                li_rc_2: "제품 및 교육 독점 국가 대표",
+                h_benefit: "교육 파트너 혜택",
+                li_bf_1: "공식 트레이너/대표로 인증",
+                li_bf_2: "글로벌 미디어 채널 홍보 지원",
+                li_bf_3: "교육 콘텐츠, 브랜드 이미지, 현지 전략 지원",
+                note_crit: "📌 <strong>참고:</strong> 인증은 자동이 아니며 실력, 윤리, 커뮤니티 발전 기여도를 바탕으로 합니다.",
+                msg_open: "🤍 “하이퍼 리얼리스틱은 숫자를 찾지 않습니다. 오랫동안 함께 갈 수 있는 분을 찾습니다.”",
+                footer_q: "“하이퍼 리얼리스틱은 모든 선택을 존중합니다. 품질, 안전, 지속 가능한 가치를 지향합니다.”"
+            },
+            jp: {
+                doc_subtitle: "製品、ガイド＆グローバルパートナーシップ",
+                doc_tagline: "品質 – 安全 – 持続可能性",
+                h_intro: "1. 製品のみの購入をご希望の方へ",
+                q_intro: "「全員がすぐにコースに参加したいわけではないことを私たちは理解しています。多くのプロフェッショナルは、安定した針、制御しやすいマシン、그리고十分な説明書が含まれた製品を求めています。」",
+                p_intro: "そのため、<strong>Hyper Realistic</strong>では、道具だけを必要とする方のために、別の製品販売ポリシーを用意しています。",
+                h_tech: "2. ハイパーリアルニードルと技術について",
+                p_tech: "ハイパーリアルニードルは、深い皮膚研究に基づいて設計されています。",
+                li_tech_1: "<strong>0.3mmの深さ制限</strong>",
+                li_tech_2: "基底層に正確にインクを注入",
+                li_tech_3: "「1ストローク – 1本の自然な眉毛」効果を作成",
+                li_tech_4: "皮膚の損傷、腫れ、剥離を最小限に抑える",
+                li_tech_5: "経験豊富なPMUアーティストならすぐに適応可能",
+                li_tech_6: "作業習慣を大きく変える必要はありません",
+                h_packs: "3. 제품 パッケージ",
+                p1_title: "パッケージ 1: ニードルのみ",
+                p1_price: "価格: 100 USD",
+                p1_li1: "하이퍼리얼니ードル 1箱 (25本)",
+                p1_li2: "配送料: 60 USD",
+                p1_li3: "PayPal手数料: 20 USD",
+                p1_total: "合計支払額: 180 USD",
+                p2_title: "パッケージ 2: カスタム・オンデマンド (MACHINE 2.0 + NEEDLES)",
+                p2_intro: "このパッケージは、最新のアップグレード機とご希望のニードル数量を組み合わせたいアーティスト向けに、完全にカスタマイズ可能です。",
+                p2_item1_h: "1. 新しい Hyper Realistic PMU Machine 2.0: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: 純粋でブレのない、超高精度なストロークを実現する高トルク機構。",
+                p2_item1_b2: "One-Stroke Saturation: ひっかかり、滑り、インク漏れなく、より速く安定した着色が可能。",
+                p2_item1_b3: "Ergonomic & Smart: 長時間施術向けのしびれ軽減グリップを採用し、OLEDスクリーンと便利なType-C充電を搭載。",
+                p2_item2_h: "2. Hyper Realistic Needles: カスタム数量",
+                p2_item2_b1: "+ 25本セットごとに 100 USD 追加。（必要な正確な数量をお知らせください！）",
+                p2_gift: "🎁 特典: スピード調整＆マシン最適化ガイド動画。",
+                p2_note: "📌 注意: 最終的な合計金額と送料は、ニードル数量確定後にダイレクトメッセージでご案内します。",
+                p3_title: "パッケージ 3: VIP フルセット",
+                p3_price: "価格: 1,000 USD",
+                p3_li1: "하이퍼리얼 PMU マシン 1台",
+                p3_li2: "하이퍼리얼니ードル 2箱 (50本)",
+                p3_li3: "ハイパーカラーインクフルセット (5色)",
+                p3_gift_h: "🎁 ガイドビデオ付き:",
+                p3_g1: "+ ニードルの原理を理解する",
+                p3_g2: "+ マシンの速度を調整する",
+                p3_g3: "+ よくある間違いを避ける",
+                p3_note: "*ビデオはガイド用です。",
+                p3_ship: "🚚 固定配送料: 100 USD",
+                p3_fee: "💳 PayPal手数料なし",
+                h_ship: "4. 国際配送",
+                t_ship_pol: "グローバル配送ポリシー",
+                li_ship_1: "お届け予定日: <strong>約15日</strong>",
+                li_ship_2: "国や税関によって多少異なる場合があります。",
+                li_ship_3: "すべての注文は、発送前に<strong>注意深く確認および検査</strong>されます。",
+                h_guide: "5. ご注文・お支払い方法",
+                s1_t: "ダイレクトメッセージ", s1_d: "InstagramやWhatsAppなどでお問い合わせください。",
+                s2_t: "情報の送信", s2_d: "氏名、住所、電話番号。",
+                s3_t: "PayPal支払い", s3_d: "案内に従ってPayPalで100%お支払い。",
+                guide_note: "🌱 <strong>備考:</strong> 技術をマスターしたい方のためのトレーニングプログラムも用意されています。",
+                h_agent: "6. 製品販売代理店募集",
+                p_agent: "グローバル製品販売代理店を募集しています。",
+                li_ag_1: "製品販売代理店",
+                li_ag_2: "国別独占代理人",
+                li_ag_3: "スタジオ / アカデミー",
+                t_ben: "パートナー特典",
+                li_ben_1: "独占価格と販売権",
+                li_ben_2: "ブランドイメージのサポート",
+                li_ben_3: "長期的な発展を共に",
+                cta_agent: "📩 詳細についてはお問い合わせください。",
+                h_roadmap: "7. プレミアム開発ロードマップ",
+                sub_roadmap: "あなたの国でハイ퍼リアルトレーナーになる",
+                txt_roadmap_1: "하이퍼리얼は、高品質なトレーナーと各国代表の<strong>グローバルなシステム構築</strong>を目指しています。",
+                txt_roadmap_cond: "上級コースを修了し基準を満たした受講生は、以下を検討することができます。",
+                li_rm_1: "認定 <strong>하이퍼리얼トレーナー</strong> への就任",
+                li_rm_2: "Le Van Academy システムへの公式掲載",
+                li_rm_3: "お住まいの国/地域での教育活動の代表",
+                txt_roadmap_for: "👉 確かな技術、長期的なビジョン、教育への熱意を持つ方向けです。",
+                h_recruit: "🌍 国別代表＆独占トレーナー募集",
+                p_recruit: "Le Van Academyでは以下を募集しています。",
+                li_rc_1: "하이퍼리얼トレーナー",
+                li_rc_2: "製品と教育の独占国別代表",
+                h_benefit: "トレーニングパートナー特典",
+                li_bf_1: "公式トレーナー/代表として認定",
+                li_bf_2: "グローバルメディアチャネルへの掲載",
+                li_bf_3: "教育コンテンツ、ブランドイメージ、現地戦略のサポート",
+                note_crit: "📌 <strong>備考:</strong> 認定は自動ではなく、技術レベル、倫理、コミュニティ貢献度に基づきます。",
+                msg_open: "🤍 「하이퍼리얼は数を求めていません。長く共に歩める方を探しています。」",
+                footer_q: "「하이퍼리얼はあらゆる選択を尊重します。品質、安全、持続可能な価値を常に目指します。」"
+            },
+            zh: {
+                doc_subtitle: "产品、指南及全球合作伙伴",
+                doc_tagline: "质量 – 安全 – 可持续发展",
+                h_intro: "1. 仅限产品买家",
+                q_intro: "“我们知道并非每个人都想立即参加课程。许多专业人士只需要：稳定的针头、易于控制的机器以及带有充分说明的产品。”",
+                p_intro: "因此，<strong>Hyper Realistic</strong> 为那些只需要工具工作的人提供单独的产品销售政策。",
+                h_tech: "2. 关于超逼真（Hyper Realistic）针头与技术",
+                p_tech: "针头基于深层皮肤研究设计：",
+                li_tech_1: "<strong>0.3mm 深度限制</strong>",
+                li_tech_2: "精确将色料注入基底层",
+                li_tech_3: "创造“1次笔触 – 1根自然眉毛”的效果",
+                li_tech_4: "最大程度减少皮肤创伤、肿胀和结痂",
+                li_tech_5: "有经验的 PMU 艺师可快速适应",
+                li_tech_6: "无需大幅改变工作习惯",
+                h_packs: "3. 产品套餐",
+                p1_title: "套餐 1: 仅针头",
+                p1_price: "价格: 100 USD",
+                p1_li1: "1 盒 Hyper Realistic 针头 (25 支)",
+                p1_li2: "运费: 60 USD",
+                p1_li3: "PayPal 费用: 20 USD",
+                p1_total: "总支付: 180 USD",
+                p2_title: "套餐 2：按需定制 (MACHINE 2.0 + NEEDLES)",
+                p2_intro: "此套餐可完全自定义，适合希望将我们最新升级机器与所需针头数量搭配的艺术家。",
+                p2_item1_h: "1. 新款 Hyper Realistic PMU Machine 2.0：500 USD",
+                p2_item1_b1: "Advanced Linear Drive：高扭矩机构，可实现纯净、零偏移、超精准的针法。",
+                p2_item1_b2: "One-Stroke Saturation：上色更快、更稳定，零拖拽、零打滑、零漏墨。",
+                p2_item1_b3: "Ergonomic & Smart：防麻手握柄，专为长时间操作设计，配备 OLED 屏幕和便捷的 Type-C 充电。",
+                p2_item2_h: "2. Hyper Realistic Needles：自定义数量",
+                p2_item2_b1: "+ 每 25 支针头加收 100 USD。（请告诉我们您需要的准确数量！）",
+                p2_gift: "🎁 赠品：速度调节与机器优化指南视频。",
+                p2_note: "📌 注：最终总价和运费将在您确认针头数量后通过私信确认。",
+                p3_title: "套餐 3: VIP 全面套装",
+                p3_price: "价格: 1,000 USD",
+                p3_li1: "1 台 Hyper Realistic PMU 机器",
+                p3_li2: "2 盒 Hyper Realistic 针头 (50 支)",
+                p3_li3: "全套 Hyper Color 色料 (5 色)",
+                p3_gift_h: "🎁 随附指南视频:",
+                p3_g1: "+ 理解针头原理",
+                p3_g2: "+ 调整机器速度",
+                p3_g3: "+ 避免常见错误",
+                p3_note: "*视频仅供参考指导。",
+                p3_ship: "🚚 固定运费: 100 USD",
+                p3_fee: "💳 无需 PayPal 费用",
+                h_ship: "4. 国际运输",
+                t_ship_pol: "全球交付政策",
+                li_ship_1: "预计送达时间: <strong>约 15 天</strong>",
+                li_ship_2: "时间因国家和海关而异",
+                li_ship_3: "所有订单在发送前均经过<strong>仔细确认和检查</strong>",
+                h_guide: "5. 如何订购",
+                s1_t: "直接私信", s1_d: "通过 Instagram, WhatsApp 等联系我们。",
+                s2_t: "发送信息", s2_d: "姓名、地址、电话。",
+                s3_t: "PayPal 付款", s3_d: "根据指示 100% 通过 PayPal 付款。",
+                guide_note: "🌱 <strong>备注:</strong> 如果您需要精通该技术，培训课程随时为您敞开。",
+                h_agent: "6. 产品分销招募",
+                p_agent: "我们正在寻找全球产品分销商：",
+                li_ag_1: "产品分销商",
+                li_ag_2: "独家国家代表",
+                li_ag_3: "工作室 / 学院",
+                t_ben: "合作伙伴权益",
+                li_ben_1: "独家定价与分销权",
+                li_ben_2: "品牌形象支持",
+                li_ben_3: "长期共同发展",
+                cta_agent: "📩 请联系我们了解详情。",
+                h_roadmap: "7. 高级开发路线图",
+                sub_roadmap: "成为您所在国家的 Hyper Realistic 讲师",
+                txt_roadmap_1: "Hyper Realistic 旨在全球建立<strong>高质量讲师与国家代表系统</strong>。",
+                txt_roadmap_cond: "完成高级课程并达到标准后，学生可获得以下机会：",
+                li_rm_1: "成为<strong>认证 Hyper Realistic 讲师</strong>",
+                li_rm_2: "在 Le Van Academy 系统正式介绍",
+                li_rm_3: "代表您所在国家或地区进行教学",
+                txt_roadmap_for: "👉 适合技术过硬、有长期眼光、希望建立专家地位的学生。",
+                h_recruit: "🌍 国家代表与独家讲师招募",
+                p_recruit: "Le Van Academy 正在公开选拔：",
+                li_rc_1: "Hyper Realistic 讲师",
+                li_rc_2: "产品与培训的独家国家代表",
+                h_benefit: "培训合作伙伴权益",
+                li_bf_1: "被认可为官方讲师/代表",
+                li_bf_2: "在全球媒体渠道展示",
+                li_bf_3: "获得相关支持：培训内容、品牌形象、当地营销策略",
+                note_crit: "📌 <strong>备注:</strong> 认可并非自动获得，而是基于：技术水平、职业道德和社区发展能力。",
+                msg_open: "🤍 “Hyper Realistic 不追求数量。我们寻找志同道合的人一起长久发展。”",
+                footer_q: "“Hyper Realistic 尊重每一种选择。我们始终致力于质量 – 安全 – 可持续的价值。”"
+            },
+            th: {
+                doc_subtitle: "ผลิตภัณฑ์, คำแนะนำ และความร่วมมือระดับโลก",
+                doc_tagline: "คุณภาพ – ความปลอดภัย – ความยั่งยืน",
+                h_intro: "1. สำหรับผู้ซื้อผลิตภัณฑ์เท่านั้น",
+                q_intro: "\"เราเข้าใจดีว่าไม่ใช่ทุกคนที่ต้องการเข้าร่วมหลักสูตรทันที มืออาชีพหลายคนแค่ต้องการ: เข็มที่เสถียร เครื่องที่ควบคุมง่าย และผลิตภัณฑ์ที่มีคำแนะนำเพียงพอ\"",
+                p_intro: "ดังนั้น <strong>Hyper Realistic</strong> จึงมีนโยบายการขายผลิตภัณฑ์แยกต่างหากสำหรับผู้ที่ต้องการเพียงเครื่องมือในการทำงาน",
+                h_tech: "2. เกี่ยวกับเข็มและเทคโนโลยี Hyper Realistic",
+                p_tech: "เข็ม Hyper Realistic ได้รับการออกแบบตามการวิจัยผิวหนังเชิงลึก:",
+                li_tech_1: "<strong>จำกัดความลึก 0.3 มม.</strong>",
+                li_tech_2: "ฝังสีลงในชั้นฐานของผิวหนังอย่างแม่นยำ",
+                li_tech_3: "สร้างเอฟเฟกต์ \"1 เส้น – 1 ขนคิ้วธรรมชาติ\"",
+                li_tech_4: "ลดการบาดเจ็บของผิวหนัง อาการบวม และการลอกให้น้อยที่สุด",
+                li_tech_5: "ศิลปิน PMU ที่มีประสบการณ์สามารถปรับตัวได้อย่างรวดเร็ว",
+                li_tech_6: "ไม่จำเป็นต้องเปลี่ยนนิสัยการทำงานมากนัก",
+                h_packs: "3. แพ็คเกจผลิตภัณฑ์",
+                p1_title: "แพ็คเกจ 1: เฉพาะเข็ม",
+                p1_price: "ราคา: 100 USD",
+                p1_li1: "เข็ม Hyper Realistic 1 กล่อง (25 เล่ม)",
+                p1_li2: "ค่าจัดส่ง: 60 USD",
+                p1_li3: "ค่าธรรมเนียม PayPal: 20 USD",
+                p1_total: "รวมยอดชำระ: 180 USD",
+                p2_title: "แพ็กเกจ 2: สั่งทำตามต้องการ (MACHINE 2.0 + NEEDLES)",
+                p2_intro: "แพ็กเกจนี้สามารถปรับแต่งได้อย่างเต็มที่ สำหรับช่างที่ต้องการจับคู่เครื่องอัปเกรดรุ่นล่าสุดของเราเข้ากับจำนวนเข็มตามที่ต้องการ",
+                p2_item1_h: "1. เครื่อง Hyper Realistic PMU Machine 2.0 รุ่นใหม่: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: กลไกแรงบิดสูงเพื่อให้ได้เส้นงานที่บริสุทธิ์ ไม่คลาดเคลื่อน และแม่นยำเป็นพิเศษ",
+                p2_item1_b2: "One-Stroke Saturation: ลงสีได้เร็วขึ้นและสม่ำเสมอมากขึ้น โดยไม่เกิดการลาก การลื่น หรือหมึกซึม",
+                p2_item1_b3: "Ergonomic & Smart: ด้ามจับออกแบบลดอาการชาติดมือ เหมาะสำหรับการใช้งานยาวนาน พร้อมหน้าจอ OLED และการชาร์จ Type-C ที่สะดวก",
+                p2_item2_h: "2. เข็ม Hyper Realistic: จำนวนตามต้องการ",
+                p2_item2_b1: "+ 100 USD สำหรับทุกชุด 25 เข็ม (บอกจำนวนที่คุณต้องการได้เลย!)",
+                p2_gift: "🎁 ของแถม: วิดีโอแนะนำการปรับความเร็วและการปรับแต่งเครื่อง",
+                p2_note: "📌 หมายเหตุ: ราคาสุทธิและค่าจัดส่งจะได้รับการยืนยันผ่านข้อความส่วนตัว เมื่อคุณสรุปจำนวนเข็มเรียบร้อยแล้ว",
+                p3_title: "แพ็คเกจ 3: VIP FULL SET",
+                p3_price: "ราคา: 1,000 USD",
+                p3_li1: "เครื่อง PMU Hyper Realistic 1 เครื่อง",
+                p3_li2: "เข็ม Hyper Realistic 2 กล่อง (50 เล่ม)",
+                p3_li3: "เซ็ตสี Hyper Color (5 สี)",
+                p3_gift_h: "🎁 วิดีโอแนะนำที่รวมอยู่:",
+                p3_g1: "+ ทำความเข้าใจหลักการของเข็ม",
+                p3_g2: "+ ปรับความเร็วเครื่อง",
+                p3_g3: "+ หลีกเลี่ยงข้อผิดพลาดทั่วไป",
+                p3_note: "*วิดีโอเป็นเพียงแนวทางเท่านั้น",
+                p3_ship: "🚚 ค่าจัดส่งคงที่: 100 USD",
+                p3_fee: "💳 ไม่มีค่าธรรมเนียม PayPal",
+                h_ship: "4. การจัดส่งระหว่างประเทศ",
+                t_ship_pol: "นโยบายการจัดส่งทั่วโลก",
+                li_ship_1: "ระยะเวลาจัดส่งโดยประมาณ: <strong>~15 วัน</strong>",
+                li_ship_2: "เวลาแตกต่างกันไปตามประเทศและพิธีการทางศุลกากร",
+                li_ship_3: "คำสั่งซื้อได้รับการ<strong>ยืนยันและตรวจสอบ</strong>ก่อนส่ง",
+                h_guide: "5. วิธีการสั่งซื้อ",
+                s1_t: "ส่งข้อความถึงเรา", s1_d: "ผ่าน Instagram, WhatsApp ฯลฯ",
+                s2_t: "ส่งข้อมูล", s2_d: "ชื่อ, ที่อยู่, เบอร์โทรศัพท์",
+                s3_t: "ชำระเงินผ่าน PayPal", s3_d: "100% ผ่าน PayPal",
+                guide_note: "🌱 <strong>หมายเหตุ:</strong> โปรแกรมการฝึกอบรมพร้อมเสมอหากคุณต้องการเชี่ยวชาญเทคนิคนี้",
+                h_agent: "6. การรับสมัครตัวแทนจำหน่ายผลิตภัณฑ์",
+                p_agent: "เรากำลังมองหาตัวแทนจำหน่ายผลิตภัณฑ์ทั่วโลก:",
+                li_ag_1: "ตัวแทนจำหน่ายผลิตภัณฑ์",
+                li_ag_2: "ตัวแทนระดับประเทศแต่เพียงผู้เดียว",
+                li_ag_3: "สตูดิโอ / อะคาเดมี่",
+                t_ben: "สิทธิประโยชน์สำหรับพันธมิตร",
+                li_ben_1: "ราคาและสิทธิการจัดจำหน่ายพิเศษ",
+                li_ben_2: "การสนับสนุนภาพลักษณ์แบรนด์",
+                li_ben_3: "การพัฒนาในระยะยาว",
+                cta_agent: "📩 ติดต่อเราสำหรับรายละเอียด",
+                h_roadmap: "7. แผนงานการพัฒนาพรีเมียม",
+                sub_roadmap: "เป็นเทรนเนอร์ Hyper Realistic ในประเทศของคุณ",
+                txt_roadmap_1: "Hyper Realistic มุ่งเป้าไปที่การสร้าง<strong>ระบบเทรนเนอร์คุณภาพสูงและตัวแทนระดับประเทศ</strong>ทั่วโลก",
+                txt_roadmap_cond: "หลังจากจบหลักสูตรขั้นสูงและผ่านเกณฑ์ นักเรียนสามารถได้รับการพิจารณาให้:",
+                li_rm_1: "เป็น <strong>เทรนเนอร์ Hyper Realistic ที่ได้รับการรับรอง</strong>",
+                li_rm_2: "ได้รับการแนะนำอย่างเป็นทางการในระบบ Le Van Academy",
+                li_rm_3: "เป็นตัวแทนการสอน Hyper Realistic ในประเทศ/ภูมิภาคของคุณ",
+                txt_roadmap_for: "👉 สำหรับนักเรียนที่มีทักษะแน่น วิสัยทัศน์ยาวไกล และมีความเป็นมืออาชีพ",
+                h_recruit: "🌍 การรับสมัครตัวแทนระดับประเทศและเทรนเนอร์พิเศษ",
+                p_recruit: "Le Van Academy กำลังเปิดรับสมัครสำหรับ:",
+                li_rc_1: "เทรนเนอร์ Hyper Realistic",
+                li_rc_2: "ตัวแทนระดับประเทศแต่เพียงผู้เดียวสำหรับผลิตภัณฑ์และการฝึกอบรม",
+                h_benefit: "สิทธิประโยชน์สำหรับพันธมิตรการฝึกอบรม",
+                li_bf_1: "ได้รับการยอมรับว่าเป็นเทรนเนอร์/ตัวแทนอย่างเป็นทางการ",
+                li_bf_2: "ได้รับเลือกให้อยู่ในช่องทางสื่อระดับโลก",
+                li_bf_3: "การสนับสนุนด้าน: เนื้อหาการฝึกอบรม, ภาพลักษณ์แบรนด์, กลยุทธ์ท้องถิ่น",
+                note_crit: "📌 <strong>หมายเหตุ:</strong> การได้รับการยอมรับไม่ได้เป็นไปโดยอัตโนมัติ แต่ขึ้นอยู่กับ: ทักษะจริยธรรม และความสามารถในการพัฒนาชุมชน",
+                msg_open: "🤍 “Hyper Realistic ไม่เน้นปริมาณ เรามองหาคนที่ใช่เพื่อเติบโตไปด้วยกันในระยะยาว”",
+            },
+            hi: {
+                doc_subtitle: "हाइपर रियलिस्टिक उत्पाद, गाइड और वैश्विक साझेदारी",
+                doc_tagline: "गुणवत्ता – सुरक्षा – स्थिरता",
+                h_intro: "1. केवल उत्पाद खरीदने वालों के लिए",
+                q_intro: "\"क्या आप केवल आधिकारिक उत्पादों की तलाश में हैं?\"",
+                p_intro: "हम दुनिया भर में व्यक्तिगत खरीदारों और ब्रांड प्रतिनिधियों को विशेष उत्पाद लाइनें प्रदान करते हैं।",
+                h_tech: "2. हाइपर रियलिस्टिक सुई और तकनीक के बारे में",
+                p_tech: "हाइपर रियलिस्टिक पीएमयू उद्योग के लिए उत्पादों की एक नई पीढ़ी है:",
+                li_tech_1: "✅ **हाइपर पीएमयू मशीन:** उच्च कंपन स्थिरता",
+                li_tech_2: "✅ **हाइपर सुई:** नैनो सटीकता, गहरा प्रवेश नहीं",
+                li_tech_3: "✅ **हाइपर पिगमेंट:** जैविक, हीलिंग के बाद कोई रंग परिवर्तन नहीं",
+                li_tech_4: "✅ **सटीकता:** 1 सुई पथ = 1 पूर्ण बाल",
+                li_tech_5: "✅ **सुरक्षा:** गहराई सीमा 0.3 मिमी",
+                li_tech_6: "✅ **कोई सुन्नता नहीं:** दर्द रहित तकनीक",
+                h_packs: "3. उत्पाद पैकेज",
+                p1_title: "10 सुई किट",
+                p1_price: "$150",
+                p1_li1: "10x हाइपर अल्ट्रा-थिन सुई",
+                p1_li2: "1x हाइपर पिगमेंट",
+                p1_li3: "आधिकारिक उपयोगकर्ता गाइड",
+                p1_total: "कुल: $150",
+                p2_title: "पैकेज 2: कस्टम ऑन-डिमांड (MACHINE 2.0 + NEEDLES)",
+                p2_intro: "यह पैकेज पूरी तरह अनुकूलन योग्य है, उन कलाकारों के लिए जो हमारी नवीनतम अपग्रेडेड मशीन को अपनी इच्छित सुइयों की मात्रा के साथ जोड़ना चाहते हैं।",
+                p2_item1_h: "1. नई Hyper Realistic PMU Machine 2.0: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: उच्च-टॉर्क मैकेनिज़्म, जो शुद्ध, बिना ड्रिफ्ट के, और अत्यंत सटीक स्ट्रोक्स देता है।",
+                p2_item1_b2: "One-Stroke Saturation: तेज़ और अधिक स्थिर कलरिंग, बिना किसी dragging, slipping, या ink leakage के।",
+                p2_item1_b3: "Ergonomic & Smart: लंबे सेशन्स के लिए anti-numbness grip के साथ, OLED स्क्रीन और सुविधाजनक Type-C charging से लैस।",
+                p2_item2_h: "2. Hyper Realistic Needles: कस्टम मात्रा",
+                p2_item2_b1: "+ हर 25 needles के set पर 100 USD. (हमें अपनी exact quantity बताएं!)",
+                p2_gift: "🎁 उपहार: Speed adjustment & machine optimization guide video.",
+                p2_note: "📌 नोट: अंतिम कुल कीमत और shipping cost की पुष्टि direct message के माध्यम से की जाएगी, जब आप अपनी needle quantity final कर देंगे।",
+                p3_title: "पैकेज 3: VIP फुल सेट",
+                p3_price: "कीमत: 1,000 USD",
+                p3_li1: "1 Hyper Realistic PMU मशीन",
+                p3_li2: "Hyper Realistic needles के 2 बॉक्स (50 pcs)",
+                p3_li3: "Hyper Color ink का फुल सेट (5 रंग)",
+                p3_gift_h: "🎁 साथ में गाइड वीडियो:",
+                p3_g1: "+ नीडल के सिद्धांत को समझें",
+                p3_g2: "+ मशीन की स्पीड एडजस्ट करना सीखें",
+                p3_g3: "+ आम गलतियों से बचें",
+                p3_note: "*वीडियो केवल मार्गदर्शन के लिए हैं।",
+                p3_ship: "🚚 फिक्स्ड शिपिंग शुल्क: 100 USD",
+                p3_fee: "💳 कोई PayPal शुल्क नहीं",
+                h_ship: "4. अंतर्राष्ट्रीय शिपिंग",
+                t_ship_pol: "वैश्विक शिपिंग नीति",
+                li_ship_1: "डीएचएल/फेडेक्स एक्सप्रेस (3-7 दिन)",
+                li_ship_2: "रियल-टाइम ट्रैकिंग नंबर",
+                li_ship_3: "सुरक्षित पैकिंग मानक",
+                h_guide: "5. ऑर्डर कैसे करें",
+                s1_t: "चरण 1: उत्पाद चुनें",
+                s1_d: "अपनी ज़रूरत की किट या मात्रा चुनें।",
+                s2_t: "चरण 2: पेपैल के माध्यम से भुगतान",
+                s2_d: "सुरक्षित वैश्विक लेनदेन।",
+                s3_t: "चरण 3: वितरण",
+                s3_d: "हम 24-48 घंटों के भीतर जहाज भेजते हैं।",
+                guide_note: "नोट: उत्पाद एक बार भेजने के बाद वापस नहीं किए जा सकते।",
+                h_agent: "6. उत्पाद वितरण भर्ती",
+                p_agent: "स्थानीय वितरक बनें:",
+                li_ag_1: "विशेष थोक मूल्य",
+                li_ag_2: "मार्केटिंग सामग्री सहायता",
+                li_ag_3: "आधिकारिक वितरक प्रमाण पत्र",
+                t_ben: "प्रमुख लाभ:",
+                li_ben_1: "उच्च लाभ मार्जिन",
+                li_ben_2: "क्षेत्रीय सुरक्षा",
+                li_ben_3: "दीर्घकालिक विकास",
+                cta_agent: "📩 विवरण के लिए हमसे संपर्क करें",
+                h_roadmap: "7. प्रीमियम विकास रोडमैप",
+                sub_roadmap: "अपने देश में हाइपर रियलिस्टिक ट्रेनर बनें",
+                txt_roadmap_1: "हाइपर रियलिस्टिक का लक्ष्य दुनिया भर में **उच्च गुणवत्ता वाले प्रशिक्षकों और देश प्रतिनिधियों** की एक प्रणाली बनाना है।",
+                txt_roadmap_cond: "उन्नत पाठ्यक्रम पूरा करने और मानदंडों को पूरा करने के बाद, छात्रों पर विचार किया जा सकता है:",
+                li_rm_1: "एक **प्रमाणित हाइपर रियलिस्टिक प्रशिक्षक** बनें",
+                li_rm_2: "ले वैन अकादमी प्रणाली पर आधिकारिक तौर पर प्रदर्शित",
+                li_rm_3: "अपने देश/क्षेत्र में हाइपर रियलिस्टिक शिक्षण प्रतिनिधि",
+                txt_roadmap_for: "👉 उन छात्रों के लिए जिनके पास ठोस कौशल, दीर्घकालिक दृष्टि और व्यावसायिकता है",
+                h_recruit: "🌍 वैश्विक देश भर्ती और विशेष प्रशिक्षक",
+                p_recruit: "ले वैन अकादमी वर्तमान में इसके लिए भर्ती कर रही है:",
+                li_rc_1: "हाइपर रियलिस्टिक ट्रेनर",
+                li_rc_2: "उत्पादों और प्रशिक्षण के लिए विशेष देश एजेंट",
+                h_benefit: "प्रशिक्षण भागीदारों के लिए लाभ",
+                li_bf_1: "आधिकारिक प्रशिक्षक/एजेंट के रूप में मान्यता प्राप्त",
+                li_bf_2: "वैश्विक मीडिया चैनलों पर चुनिंदा प्रदर्शन",
+                li_bf_3: "सहायता: प्रशिक्षण सामग्री, ब्रांड छवि, स्थानीय रणनीति",
+                note_crit: "📌 **नोट:** स्वीकृति स्वचालित नहीं है, लेकिन इस पर निर्भर करती है: कौशल, नैतिकता और समुदाय विकसित करने की क्षमता",
+                msg_open: "🤍 “हाइपर रियलिस्टिक मात्रा पर ध्यान केंद्रित नहीं करता है, हम लंबे समय तक बढ़ने के लिए सही लोगों की तलाश कर रहे हैं”",
+                footer_q: "“हाइपर रियलिस्टिक हर पसंद का सम्मान करता है, हम हमेशा गुणवत्ता - सुरक्षा - टिकाऊ मूल्य पर ध्यान केंद्रित करते हैं”"
+            },
+            fr: {
+                doc_subtitle: "PRODUITS, GUIDES ET PARTENARIAT MONDIAL HYPER RÉALISTE",
+                doc_tagline: "Qualité – Sécurité – Durabilité",
+                h_intro: "1. Pour les acheteurs de produits uniquement",
+                q_intro: "\"Cherchez-vous uniquement des produits officiels ?\"",
+                p_intro: "Nous proposons des gammes de produits exclusives aux acheteurs individuels et aux représentants de marques dans le monde entier.",
+                h_tech: "2. À propos des aiguilles et de la technologie hyper réalistes",
+                p_tech: "Hyper Realistic est une nouvelle génération de produits pour l'industrie du PMU :",
+                li_tech_1: "✅ **Machine PMU Hyper :** Haute stabilité de vibration",
+                li_tech_2: "✅ **Aiguille Hyper :** Précision nano, pas d'invasion profonde",
+                li_tech_3: "✅ **Pigment Hyper :** Organique, pas de changement de couleur après cicatrisation",
+                li_tech_4: "✅ **Précision :** 1 passage d'aiguille = 1 poil complet",
+                li_tech_5: "✅ **Sécurité :** Limite de profondeur 0,3 mm",
+                li_tech_6: "✅ **Pas d'engourdissement :** Technique sans douleur",
+                h_packs: "3. Lots de produits",
+                p1_title: "Kit 10 Aiguilles",
+                p1_price: "150 $",
+                p1_li1: "10x Aiguilles Hyper Ultra-fines",
+                p1_li2: "1x Pigment Hyper",
+                p1_li3: "Guide de l'utilisateur officiel",
+                p1_total: "Total : 150 $",
+                p2_title: "PACKAGE 2 : PERSONNALISATION À LA DEMANDE (MACHINE 2.0 + AIGUILLES)",
+                p2_intro: "Ce package est entièrement personnalisable pour les artistes qui souhaitent associer notre machine récemment améliorée à la quantité d'aiguilles souhaitée.",
+                p2_item1_h: "1. Nouvelle Hyper Realistic PMU Machine 2.0 : 500 USD",
+                p2_item1_b1: "Advanced Linear Drive : mécanisme à couple élevé pour des tracés purs, sans dérive et ultra précis.",
+                p2_item1_b2: "One-Stroke Saturation : coloration plus rapide et plus stable, sans traînage, glissement ni fuite d'encre.",
+                p2_item1_b3: "Ergonomic & Smart : poignée anti-engourdissement conçue pour les longues sessions, équipée d'un écran OLED et d'une recharge Type-C pratique.",
+                p2_item2_h: "2. Hyper Realistic Needles : Quantité personnalisée",
+                p2_item2_b1: "+ 100 USD pour chaque lot de 25 aiguilles. (Indiquez-nous la quantité exacte dont vous avez besoin !)",
+                p2_gift: "🎁 Cadeau : vidéo guide pour le réglage de la vitesse et l'optimisation de la machine.",
+                p2_note: "📌 Note : le prix total final et les frais de livraison seront confirmés par message direct une fois que vous aurez finalisé la quantité d'aiguilles.",
+                p3_title: "PACKAGE 3 : SET VIP COMPLET",
+                p3_price: "Prix : 1 000 USD",
+                p3_li1: "1 machine PMU Hyper Realistic",
+                p3_li2: "2 boîtes d'aiguilles Hyper Realistic (50 pièces)",
+                p3_li3: "Set complet d'encres Hyper Color (5 couleurs)",
+                p3_gift_h: "🎁 VIDÉOS GUIDE INCLUSES :",
+                p3_g1: "+ Comprendre le principe des aiguilles",
+                p3_g2: "+ Régler la vitesse de la machine",
+                p3_g3: "+ Éviter les erreurs courantes",
+                p3_note: "*Les vidéos sont fournies à titre indicatif uniquement.",
+                p3_ship: "🚚 Frais de livraison fixes : 100 USD",
+                p3_fee: "💳 Aucun frais PayPal",
+                h_ship: "4. Expédition internationale",
+                t_ship_pol: "Politique d'expédition mondiale",
+                li_ship_1: "DHL/FedEx Express (3-7 jours)",
+                li_ship_2: "Numéro de suivi en temps réel",
+                li_ship_3: "Normes d'emballage sécurisé",
+                h_guide: "5. Comment commander",
+                s1_t: "Étape 1 : Choisir le produit",
+                s1_d: "Choisissez le kit ou la quantité dont vous avez besoin.",
+                s2_t: "Étape 2 : Paiement via PayPal",
+                s2_d: "Transactions mondiales sécurisées.",
+                s3_t: "Étape 3 : Livraison",
+                s3_d: "Nous expédions dans les 24-48 heures.",
+                guide_note: "Note : Les produits ne sont pas remboursables une fois expédiés.",
+                h_agent: "6. Recrutement pour la distribution de produits",
+                p_agent: "Devenez distributeur local :",
+                li_ag_1: "Prix de gros exclusifs",
+                li_ag_2: "Support du matériel marketing",
+                li_ag_3: "Certificat de distributeur officiel",
+                t_ben: "Avantages clés :",
+                li_ben_1: "Marges bénéficiaires élevées",
+                li_ben_2: "Protection territoriale",
+                li_ben_3: "Développement à long terme",
+                cta_agent: "📩 Contactez-nous pour les détails",
+                h_roadmap: "7. Feuille de route de développement premium",
+                sub_roadmap: "Devenez formateur Hyper Realistic dans votre pays",
+                txt_roadmap_1: "Hyper Realistic vise à créer un système de **formateurs de haute qualité et de représentants nationaux** dans le monde entier.",
+                txt_roadmap_cond: "Après avoir terminé le cours avancé et répondu aux critères, les étudiants peuvent être considérés pour :",
+                li_rm_1: "Devenir un **formateur Hyper Realistic certifié**",
+                li_rm_2: "Affichage officiel sur le système Le Van Academy",
+                li_rm_3: "Représentant d'enseignement Hyper Realistic dans votre pays/région",
+                txt_roadmap_for: "👉 Pour les étudiants ayant des compétences solides, une vision à long terme et du professionnalisme",
+                h_recruit: "🌍 Recrutement de pays mondial et formateurs spéciaux",
+                p_recruit: "Le Van Academy recrute actuellement pour :",
+                li_rc_1: "Formateur Hyper Realistic",
+                li_rc_2: "Agent national exclusif pour les produits et la formation",
+                h_benefit: "Avantages pour les partenaires de formation",
+                li_bf_1: "Reconnu comme formateur/agent officiel",
+                li_bf_2: "Mise en avant sélectionnée sur les canaux médiatiques mondiaux",
+                li_bf_3: "Support sur : Matériel de formation, Image de marque, Stratégie locale",
+                note_crit: "📌 **NOTE :** L'acceptation n'est pas automatique mais dépend de : Compétences, Éthique et capacité à développer la communauté",
+                msg_open: "🤍 “Hyper Realistic ne se concentre pas sur la quantité, nous cherchons les bonnes personnes pour grandir ensemble sur le long terme”",
+                footer_q: "“Hyper Realistic respecte chaque choix, nous nous concentrons toujours sur Qualité – Sécurité – Valeur durable”"
+            },
+            de: {
+                doc_subtitle: "HYPER REALISTIC PRODUKTE, LEITFÄDEN & GLOBALE PARTNERSCHAFT",
+                doc_tagline: "Qualität – Sicherheit – Nachhaltigkeit",
+                h_intro: "1. Nur für Produktkäufer",
+                q_intro: "\"Suchen Sie nur nach offiziellen Produkten?\"",
+                p_intro: "Wir bieten exklusive Produktlinien für Einzelkäufer und Markenvertreter weltweit an.",
+                h_tech: "2. Über hyperrealistische Nadeln & Technologie",
+                p_tech: "Hyper Realistic ist eine neue Generation von Produkten für die PMU-Industrie:",
+                li_tech_1: "✅ **Hyper PMU Maschine:** Hohe Vibrationsstabilität",
+                li_tech_2: "✅ **Hyper Nadel:** Nano-Präzision, keine tiefe Invasion",
+                li_tech_3: "✅ **Hyper Pigment:** Organisch, keine Farbveränderung nach der Heilung",
+                li_tech_4: "✅ **Präzision:** 1 Nadelpfad = 1 komplettes Haar",
+                li_tech_5: "✅ **Sicherheit:** Tiefenbegrenzung 0,3 mm",
+                li_tech_6: "✅ **Keine Betäubung:** Schmerzfreie Technik",
+                h_packs: "3. Produktpakete",
+                p1_title: "10 Nadel Kit",
+                p1_price: "$150",
+                p1_li1: "10x Hyper Ultradünne Nadeln",
+                p1_li2: "1x Hyper Pigment",
+                p1_li3: "Offizielles Benutzerhandbuch",
+                p1_total: "Gesamt: $150",
+                p2_title: "PACKAGE 2: INDIVIDUELL AUF ANFRAGE (MACHINE 2.0 + NADELN)",
+                p2_intro: "Dieses Paket ist vollständig anpassbar für Künstler, die unsere neueste verbesserte Maschine mit der gewünschten Anzahl an Nadeln kombinieren möchten.",
+                p2_item1_h: "1. Neue Hyper Realistic PMU Machine 2.0: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: Hochdrehmoment-Mechanismus für reine, driftfreie und hochpräzise Striche.",
+                p2_item1_b2: "One-Stroke Saturation: Schnellere und stabilere Farbabgabe ohne Ziehen, Rutschen oder Tintenleckage.",
+                p2_item1_b3: "Ergonomic & Smart: Ergonomischer, taubheitshemmender Griff für lange Sitzungen, ausgestattet mit OLED-Bildschirm und praktischer Type-C-Ladung.",
+                p2_item2_h: "2. Hyper Realistic Needles: Individuelle Menge",
+                p2_item2_b1: "+ 100 USD für jeweils 25 Nadeln. (Teile uns die genaue Menge mit, die du benötigst!)",
+                p2_gift: "🎁 Geschenk: Videoanleitung zur Geschwindigkeitsanpassung und Maschinenoptimierung.",
+                p2_note: "📌 Hinweis: Der endgültige Gesamtpreis und die Versandkosten werden per Direktnachricht bestätigt, sobald du die Menge deiner Nadeln festgelegt hast.",
+                p3_title: "PAKET 3: VIP KOMPLETTSET",
+                p3_price: "Preis: 1.000 USD",
+                p3_li1: "1 Hyper Realistic PMU Maschine",
+                p3_li2: "2 Boxen Hyper Realistic Nadeln (50 Stk.)",
+                p3_li3: "Komplettset Hyper Color Pigmente (5 Farben)",
+                p3_gift_h: "🎁 ENTHALTENE ANLEITUNGSVIDEOS:",
+                p3_g1: "+ Das Prinzip der Nadeln verstehen",
+                p3_g2: "+ Die Geschwindigkeit der Maschine anpassen",
+                p3_g3: "+ Häufige Fehler vermeiden",
+                p3_note: "*Die Videos dienen nur zur Orientierung.",
+                p3_ship: "🚚 Feste Versandkosten: 100 USD",
+                p3_fee: "💳 Keine PayPal-Gebühr",
+                h_ship: "4. Internationaler Versand",
+                t_ship_pol: "Globale Versandrichtlinie",
+                li_ship_1: "DHL/FedEx Express (3-7 Tage)",
+                li_ship_2: "Echtzeit-Tracking-Nummer",
+                li_ship_3: "Sichere Verpackungsstandards",
+                h_guide: "5. Wie man bestellt",
+                s1_t: "Schritt 1: Produkt wählen",
+                s1_d: "Wählen Sie das Kit oder die Menge, die Sie benötigen.",
+                s2_t: "Schritt 2: Zahlung per PayPal",
+                s2_d: "Sichere globale Transaktionen.",
+                s3_t: "Schritt 3: Lieferung",
+                s3_d: "Wir versenden innerhalb von 24-48 Stunden.",
+                guide_note: "Hinweis: Produkte können nach dem Versand nicht erstattet werden.",
+                h_agent: "6. Rekrutierung für den Produktvertrieb",
+                p_agent: "Werden Sie lokaler Distributor:",
+                li_ag_1: "Exklusive Großhandelspreise",
+                li_ag_2: "Unterstützung bei Marketingmaterialien",
+                li_ag_3: "Offizielles Distributor-Zertifikat",
+                t_ben: "Hauptvorteile:",
+                li_ben_1: "Hohe Gewinnspannen",
+                li_ben_2: "Territorialschutz",
+                li_ben_3: "Langfristige Entwicklung",
+                cta_agent: "📩 Kontaktieren Sie uns für Details",
+                h_roadmap: "7. Premium-Entwicklungs-Roadmap",
+                sub_roadmap: "Werden Sie Hyper Realistic Trainer in Ihrem Land",
+                txt_roadmap_1: "Hyper Realistic zielt darauf ab, ein System von **hochqualifizierten Trainern und Ländervertretern** weltweit aufzubauen.",
+                txt_roadmap_cond: "Nach Abschluss des Fortgeschrittenenkurses und Erfüllung der Kriterien können Studenten berücksichtigt werden für:",
+                li_rm_1: "Ein **zertifizierter Hyper Realistic Trainer** werden",
+                li_rm_2: "Offizielle Anzeige im Le Van Academy System",
+                li_rm_3: "Vertreter für Hyper Realistic Ausbildung in Ihrem Land/Ihrer Region",
+                txt_roadmap_for: "👉 Für Studenten mit soliden Fähigkeiten, langfristiger Vision und Professionalität",
+                h_recruit: "🌍 Globale Länderrekrutierung und Spezialtrainer",
+                p_recruit: "Le Van Academy rekrutiert derzeit für:",
+                li_rc_1: "Hyper Realistic Trainer",
+                li_rc_2: "Exklusiver Länderagent für Produkte und Training",
+                h_benefit: "Vorteile für Trainingspartner",
+                li_bf_1: "Anerkannt als offizieller Trainer/Agent",
+                li_bf_2: "Ausgewählte Präsenz in globalen Medienkanälen",
+                li_bf_3: "Support bei: Trainingsmaterialien, Markenimage, lokale Strategie",
+                note_crit: "📌 **HINWEIS:** Die Aufnahme erfolgt nicht automatisch, sondern hängt ab von: Fähigkeiten, Ethik und der Fähigkeit, die Gemeinschaft zu entwickeln",
+                msg_open: "🤍 „Hyper Realistic konzentriert sich nicht auf Quantität, wir suchen die richtigen Leute, um langfristig gemeinsam zu wachsen“",
+                footer_q: "„Hyper Realistic respektiert jede Wahl, wir konzentrieren uns immer auf Qualität – Sicherheit – nachhaltigen Wert“"
+            },
+            es: {
+                doc_subtitle: "PRODUCTOS, GUÍAS Y ALIANZA GLOBAL HIPER REALISTA",
+                doc_tagline: "Calidad – Seguridad – Sostenibilidad",
+                h_intro: "1. Para compradores de solo producto",
+                q_intro: "¿Busca únicamente productos oficiales?",
+                p_intro: "Ofrecemos líneas de productos exclusivas para compradores individuales y representantes de marcas en todo el mundo.",
+                h_tech: "2. Sobre Agujas y Tecnología Hiperrealistas",
+                p_tech: "Hyper Realistic es una nueva generación de productos para la industria PMU:",
+                li_tech_1: "✅ **Máquina Hyper PMU:** Alta estabilidad de vibración",
+                li_tech_2: "✅ **Aguja Hyper:** Nano precisión, sin invasión profunda",
+                li_tech_3: "✅ **Pigmento Hyper:** Orgánico, sin cambio de color tras la curación",
+                li_tech_4: "✅ **Precisión:** 1 paso de aguja = 1 pelo completo",
+                li_tech_5: "✅ **Seguridad:** Límite de profundidad 0.3 mm",
+                li_tech_6: "✅ **Sin adormecimiento:** Técnica sin dolor",
+                h_packs: "3. Paquetes de productos",
+                p1_title: "Kit de 10 Agujas",
+                p1_price: "$150",
+                p1_li1: "10x Agujas Hyper Ultrafinas",
+                p1_li2: "1x Pigmento Hyper",
+                p1_li3: "Guía de usuario oficial",
+                p1_total: "Total: $150",
+                p2_title: "PACKAGE 2: PERSONALIZACIÓN A PEDIDO (MACHINE 2.0 + AGUJAS)",
+                p2_intro: "Este paquete es totalmente personalizable para artistas que quieran combinar nuestra máquina mejorada más reciente con la cantidad de agujas que deseen.",
+                p2_item1_h: "1. Nueva Hyper Realistic PMU Machine 2.0: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: mecanismo de alto par para trazos puros, sin deriva y ultraprecisos.",
+                p2_item1_b2: "One-Stroke Saturation: coloración más rápida y estable, sin arrastre, deslizamiento ni fuga de tinta.",
+                p2_item1_b3: "Ergonomic & Smart: empuñadura antientumecimiento diseñada para largas sesiones, equipada con pantalla OLED y cómoda carga Type-C.",
+                p2_item2_h: "2. Hyper Realistic Needles: Cantidad personalizada",
+                p2_item2_b1: "+ 100 USD por cada juego de 25 agujas. (¡Dinos la cantidad exacta que necesitas!)",
+                p2_gift: "🎁 Regalo: video guía de ajuste de velocidad y optimización de la máquina.",
+                p2_note: "📌 Nota: El precio total final y el costo de envío se confirmarán por mensaje directo una vez que finalices la cantidad de agujas.",
+                p3_title: "PAQUETE 3: SET VIP COMPLETO",
+                p3_price: "Precio: 1,000 USD",
+                p3_li1: "1 máquina PMU Hyper Realistic",
+                p3_li2: "2 cajas de agujas Hyper Realistic (50 uds.)",
+                p3_li3: "Set completo de pigmentos Hyper Color (5 colores)",
+                p3_gift_h: "🎁 VIDEOS GUÍA INCLUIDOS:",
+                p3_g1: "+ Comprender el principio de las agujas",
+                p3_g2: "+ Ajustar la velocidad de la máquina",
+                p3_g3: "+ Evitar errores comunes",
+                p3_note: "*Los videos son solo de guía.",
+                p3_ship: "🚚 Tarifa fija de envío: 100 USD",
+                p3_fee: "💳 Sin comisión de PayPal",
+                h_ship: "4. Envío internacional",
+                t_ship_pol: "Política de envío global",
+                li_ship_1: "DHL/FedEx Express (3-7 días)",
+                li_ship_2: "Número de seguimiento en tiempo real",
+                li_ship_3: "Estándares de embalaje seguro",
+                h_guide: "5. Cómo ordenar",
+                s1_t: "Paso 1: Elegir producto",
+                s1_d: "Elija el kit o la cantidad que necesite.",
+                s2_t: "Paso 2: Pago vía PayPal",
+                s2_d: "Transacciones globales seguras.",
+                s3_t: "Paso 3: Entrega",
+                s3_d: "Enviamos en 24-48 horas.",
+                guide_note: "Nota: Los productos no son reembolsables una vez enviados.",
+                h_agent: "6. Contratación para la distribución de productos",
+                p_agent: "Conviértase en distribuidor local:",
+                li_ag_1: "Precios mayoristas exclusivos",
+                li_ag_2: "Soporte de material de marketing",
+                li_ag_3: "Certificado de distribuidor oficial",
+                t_ben: "Beneficios clave:",
+                li_ben_1: "Altos márgenes de beneficio",
+                li_ben_2: "Protección territorial",
+                li_ben_3: "Desarrollo a largo plazo",
+                cta_agent: "📩 Contáctenos para más detalles",
+                h_roadmap: "7. Hoja de ruta de desarrollo premium",
+                sub_roadmap: "Conviértase en entrenador Hyper Realistic en su país",
+                txt_roadmap_1: "Hyper Realistic pretende crear un sistema de **entrenadores de alta calidad y representantes nacionales** en todo el mundo.",
+                txt_roadmap_cond: "Tras completar el curso avanzado y cumplir los criterios, los alumnos podrán ser considerados para:",
+                li_rm_1: "Convertirse en un **entrenador certificado Hyper Realistic**",
+                li_rm_2: "Visualización oficial en el sistema de Le Van Academy",
+                li_rm_3: "Representante de enseñanza de Hyper Realistic en su país/región",
+                txt_roadmap_for: "👉 Para alumnos con habilidades sólidas, visión a largo plazo y profesionalidad",
+                h_recruit: "🌍 Contratación mundial de países y entrenadores especiales",
+                p_recruit: "Le Van Academy está contratando actualmente para:",
+                li_rc_1: "Entrenador Hyper Realistic",
+                li_rc_2: "Agente nacional exclusivo para productos y formación",
+                h_benefit: "Beneficios para socios de formación",
+                li_bf_1: "Reconocido como entrenador/agente oficial",
+                li_bf_2: "Presencia destacada en canales de comunicación globales",
+                li_bf_3: "Soporte en: Material de formación, Imagen de marca, Estrategia local",
+                note_crit: "📌 **NOTA:** La aceptación no es automática, sino que depende de: Habilidades, Ética y capacidad para desarrollar la comunidad",
+                msg_open: "🤍 “Hyper Realistic no se centra en la cantidad, buscamos a las personas adecuadas para crecer juntos a largo plazo”",
+                footer_q: "“Hyper Realistic respeta cada elección, siempre nos centramos en Calidad – Seguridad – Valor duradero”"
+            },
+            ru: {
+                doc_subtitle: "ПРОДУКЦИЯ, РУКОВОДСТВА И ГЛОБАЛЬНОЕ ПАРТНЕРСТВО HYPER REALISTIC",
+                doc_tagline: "Качество – Безопасность – Устойчивость",
+                h_intro: "1. Только для покупателей продукции",
+                q_intro: "\"Вы ищете только официальную продукцию?\"",
+                p_intro: "Мы предлагаем эксклюзивные линейки продуктов для индивидуальных покупателей и представителей брендов по всему миру.",
+                h_tech: "2. О гиперреалистичных иглах и технологиях",
+                p_tech: "Hyper Realistic — это новое поколение продуктов для индустрии PMU:",
+                li_tech_1: "✅ **Машинка Hyper PMU:** Высокая стабильность вибрации",
+                li_tech_2: "✅ **Игла Hyper:** Нано-точность, отсутствие глубокого проникновения",
+                li_tech_3: "✅ **Пигмент Hyper:** Органический, без изменения цвета после заживления",
+                li_tech_4: "✅ **Точность:** 1 проход иглы = 1 полный волосок",
+                li_tech_5: "✅ **Безопасность:** Ограничение глубины 0,3 мм",
+                li_tech_6: "✅ **Без анестезии:** Безболезненная техника",
+                h_packs: "3. Пакеты продуктов",
+                p1_title: "Набор из 10 игл",
+                p1_price: "$150",
+                p1_li1: "10x ультратонких игл Hyper",
+                p1_li2: "1x пигмент Hyper",
+                p1_li3: "Официальное руководство пользователя",
+                p1_total: "Итого: $150",
+                p2_title: "ПАКЕТ 2: ИНДИВИДУАЛЬНАЯ КОМПЛЕКТАЦИЯ ПОД ЗАКАЗ (MACHINE 2.0 + NEEDLES)",
+                p2_intro: "Этот пакет полностью настраивается для мастеров, которые хотят сочетать нашу новейшую улучшенную машину с нужным количеством игл.",
+                p2_item1_h: "1. Новая Hyper Realistic PMU Machine 2.0: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: мощный механизм для чистых, без смещения и сверхточных штрихов.",
+                p2_item1_b2: "One-Stroke Saturation: более быстрое и стабильное нанесение цвета без рывков, проскальзывания и утечки пигмента.",
+                p2_item1_b3: "Ergonomic & Smart: противонемеющая рукоятка для длительных сессий, оснащенная экраном OLED и удобной зарядкой Type-C.",
+                p2_item2_h: "2. Hyper Realistic Needles: Индивидуальное количество",
+                p2_item2_b1: "+ 100 USD за каждый комплект из 25 игл. (Сообщите нам точное количество, которое вам нужно!)",
+                p2_gift: "🎁 Подарок: видео-гид по настройке скорости и оптимизации машины.",
+                p2_note: "📌 Примечание: итоговая общая цена и стоимость доставки будут подтверждены в личном сообщении после того, как вы укажете количество игл.",
+                p3_title: "ПАКЕТ 3: VIP ПОЛНЫЙ НАБОР",
+                p3_price: "Цена: 1 000 USD",
+                p3_li1: "1 машинка Hyper Realistic PMU",
+                p3_li2: "2 коробки игл Hyper Realistic (50 шт.)",
+                p3_li3: "Полный набор пигментов Hyper Color (5 цветов)",
+                p3_gift_h: "🎁 В КОМПЛЕКТЕ ОБУЧАЮЩИЕ ВИДЕО:",
+                p3_g1: "+ Понять принцип работы игл",
+                p3_g2: "+ Научиться регулировать скорость машинки",
+                p3_g3: "+ Избегать распространенных ошибок",
+                p3_note: "*Видео предназначены только для ознакомления.",
+                p3_ship: "🚚 Фиксированная стоимость доставки: 100 USD",
+                p3_fee: "💳 Без комиссии PayPal",
+                h_ship: "4. Международная доставка",
+                t_ship_pol: "Глобальная политика доставки",
+                li_ship_1: "DHL/FedEx Express (3-7 дней)",
+                li_ship_2: "Номер отслеживания в реальном времени",
+                li_ship_3: "Стандарты безопасной упаковки",
+                h_guide: "5. Как заказать",
+                s1_t: "Шаг 1: Выберите продукт",
+                s1_d: "Выберите нужный набор или количество.",
+                s2_t: "Шаг 2: Оплата через PayPal",
+                s2_d: "Безопасные глобальные транзакции.",
+                s3_t: "Шаг 3: Доставка",
+                s3_d: "Мы отправляем в течение 24-48 часов.",
+                guide_note: "Примечание: Продукты не подлежат возврату после отправки.",
+                h_agent: "6. Набор персонала для дистрибуции продукции",
+                p_agent: "Станьте местным дистрибьютором:",
+                li_ag_1: "Эксклюзивные оптовые цены",
+                li_ag_2: "Поддержка маркетинговыми материалами",
+                li_ag_3: "Официальный сертификат дистрибьютора",
+                t_ben: "Основные преимущества:",
+                li_ben_1: "Высокая маржа прибыли",
+                li_ben_2: "Территориальная защита",
+                li_ben_3: "Долгосрочное развитие",
+                cta_agent: "📩 Свяжитесь с нами для получения подробной информации",
+                h_roadmap: "7. Дорожная карта развития премиум-класса",
+                sub_roadmap: "Станьте тренером Hyper Realistic в своей стране",
+                txt_roadmap_1: "Hyper Realistic стремится создать систему **высококвалифицированных тренеров и представителей стран** по всему миру.",
+                txt_roadmap_cond: "После завершения продвинутого курса и соответствия критериям студенты могут быть рассмотрены для:",
+                li_rm_1: "Стать **сертифицированным тренером Hyper Realistic**",
+                li_rm_2: "Официальное отображение в системе Le Van Academy",
+                li_rm_3: "Представитель по обучению Hyper Realistic в вашей стране/регионе",
+                txt_roadmap_for: "👉 Для студентов с прочными навыками, долгосрочным видением и профессионализмом",
+                h_recruit: "🌍 Глобальный набор стран и специальных тренеров",
+                p_recruit: "Le Van Academy в настоящее время набирает:",
+                li_rc_1: "Тренер Hyper Realistic",
+                li_rc_2: "Эксклюзивный агент в стране по продукции и обучению",
+                h_benefit: "Преимущества для партнеров по обучению",
+                li_bf_1: "Признание официальным тренером/агентом",
+                li_bf_2: "Выборочное присутствие в глобальных медиа-каналах",
+                li_bf_3: "Поддержка в: учебных материалах, имидже бренда, локальной стратегии",
+                note_crit: "📌 **ПРИМЕЧАНИЕ:** Прием не является автоматическим, а зависит от: навыков, этики и способности развивать сообщество",
+                msg_open: "🤍 «Hyper Realistic не ориентируется на количество, мы ищем подходящих людей для совместного долгосрочного роста»",
+                footer_q: "«Hyper Realistic уважает любой выбор, мы всегда ориентируемся на Качество – Безопасность – Устойчивую ценность»"
+            },
+            it: {
+                doc_subtitle: "PRODOTTI, GUIDE E PARTENARIATO GLOBALE HYPER REALISTIC",
+                doc_tagline: "Qualità – Sicurezza – Sostenibilità",
+                h_intro: "1. Per acquirenti solo di prodotti",
+                q_intro: "\"Cerchi solo prodotti ufficiali?\"",
+                p_intro: "Offriamo linee di prodotti esclusive per acquirenti individuali e rappresentanti di marchi in tutto il mondo.",
+                h_tech: "2. Informazioni su aghi e tecnologia iperrealistici",
+                p_tech: "Hyper Realistic è una nuova generazione di prodotti per l'industria PMU:",
+                li_tech_1: "✅ **Macchina Hyper PMU:** Elevata stabilità delle vibrazioni",
+                li_tech_2: "✅ **Ago Hyper:** Nano precisione, nessuna invasione profonda",
+                li_tech_3: "✅ **Pigmento Hyper:** Organico, nessun cambiamento di colore dopo la guarigione",
+                li_tech_4: "✅ **Precisione:** 1 passaggio dell'ago = 1 pelo completo",
+                li_tech_5: "✅ **Sicurezza:** Limite di profondità 0,3 mm",
+                li_tech_6: "✅ **Nessun intorpidimento:** Tecnica senza dolore",
+                h_packs: "3. Pacchetti di prodotti",
+                p1_title: "Kit 10 Aghi",
+                p1_price: "$150",
+                p1_li1: "10x Aghi Hyper Ultrasottili",
+                p1_li2: "1x Pigmento Hyper",
+                p1_li3: "Guida utente ufficiale",
+                p1_total: "Totale: $150",
+                p2_title: "PACKAGE 2: PERSONALIZZAZIONE SU RICHIESTA (MACHINE 2.0 + AGHI)",
+                p2_intro: "Questo pacchetto è completamente personalizzabile per gli artisti che desiderano abbinare la nostra macchina più recente e aggiornata alla quantità di aghi desiderata.",
+                p2_item1_h: "1. Nuova Hyper Realistic PMU Machine 2.0: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: meccanismo ad alta coppia per tratti puri, senza deriva e ultra-precisi.",
+                p2_item1_b2: "One-Stroke Saturation: colorazione più rapida e stabile, senza trascinamenti, slittamenti o perdite di inchiostro.",
+                p2_item1_b3: "Ergonomic & Smart: impugnatura anti-intorpidimento progettata per lunghe sessioni, dotata di schermo OLED e comoda ricarica Type-C.",
+                p2_item2_h: "2. Hyper Realistic Needles: Quantità personalizzata",
+                p2_item2_b1: "+ 100 USD per ogni set da 25 aghi. (Dicci la quantità esatta di cui hai bisogno!)",
+                p2_gift: "🎁 Omaggio: video guida alla regolazione della velocità e all'ottimizzazione della macchina.",
+                p2_note: "📌 Nota: il prezzo totale finale e le spese di spedizione saranno confermati via messaggio diretto una volta che avrai definito la quantità di aghi.",
+                p3_title: "PACCHETTO 3: SET VIP COMPLETO",
+                p3_price: "Prezzo: 1.000 USD",
+                p3_li1: "1 macchina PMU Hyper Realistic",
+                p3_li2: "2 scatole di aghi Hyper Realistic (50 pz)",
+                p3_li3: "Set completo di pigmenti Hyper Color (5 colori)",
+                p3_gift_h: "🎁 VIDEO GUIDA INCLUSI:",
+                p3_g1: "+ Comprendere il principio degli aghi",
+                p3_g2: "+ Regolare la velocità della macchina",
+                p3_g3: "+ Evitare gli errori comuni",
+                p3_note: "*I video sono solo a scopo guida.",
+                p3_ship: "🚚 Costo di spedizione fisso: 100 USD",
+                p3_fee: "💳 Nessuna commissione PayPal",
+                h_ship: "4. Spedizione internazionale",
+                t_ship_pol: "Politica di spedizione globale",
+                li_ship_1: "DHL/FedEx Express (3-7 giorni)",
+                li_ship_2: "Numero di tracking in tempo reale",
+                li_ship_3: "Standard di imballaggio sicuro",
+                h_guide: "5. Come ordinare",
+                s1_t: "Passaggio 1: Scegli il prodotto",
+                s1_d: "Scegli il kit o la quantità di cui hai bisogno.",
+                s2_t: "Passaggio 2: Pagamento tramite PayPal",
+                s2_d: "Transazioni globali sicure.",
+                s3_t: "Passaggio 3: Consegna",
+                s3_d: "Spediamo entro 24-48 ore.",
+                guide_note: "Nota: i prodotti non sono rimborsabili una volta spediti.",
+                h_agent: "6. Reclutamento per la distribuzione del prodotto",
+                p_agent: "Diventa un distributore locale:",
+                li_ag_1: "Prezzi all'ingrosso esclusivi",
+                li_ag_2: "Supporto materiale di marketing",
+                li_ag_3: "Certificato di distributore ufficiale",
+                t_ben: "Vantaggi chiave:",
+                li_ben_1: "Elevati margini di profitto",
+                li_ben_2: "Protezione territoriale",
+                li_ben_3: "Sviluppo a lungo termine",
+                cta_agent: "📩 Contattaci per i dettagli",
+                h_roadmap: "7. Roadmap di sviluppo premium",
+                sub_roadmap: "Diventa formatore Hyper Realistic nel tuo paese",
+                txt_roadmap_1: "Hyper Realistic mira a creare un sistema di **formatori di alta qualità e rappresentanti nazionali** in tutto il mondo.",
+                txt_roadmap_cond: "Dopo aver completato il corso avanzato e soddisfatto i criteri, gli studenti possono essere presi in considerazione per:",
+                li_rm_1: "Diventare un **formatore Hyper Realistic certificato**",
+                li_rm_2: "Visualizzazione ufficiale sul sistema Le Van Academy",
+                li_rm_3: "Rappresentante didattico Hyper Realistic nel tuo paese/regione",
+                txt_roadmap_for: "👉 Per studenti con solide competenze, visione a lungo termine e professionalità",
+                h_recruit: "🌍 Reclutamento nazionale globale e formatori speciali",
+                p_recruit: "Le Van Academy sta attualmente reclutando per:",
+                li_rc_1: "Formatore Hyper Realistic",
+                li_rc_2: "Agente nazionale esclusivo per prodotti e formazione",
+                h_benefit: "Vantaggi per i partner di formazione",
+                li_bf_1: "Riconosciuto come formatore/agente ufficiale",
+                li_bf_2: "Presenza selezionata sui canali media globali",
+                li_bf_3: "Supporto su: materiali di formazione, immagine coordinata, strategia locale",
+                note_crit: "📌 **NOTA:** L'accettazione non è automatica ma dipende da: competenze, etica e capacità di sviluppare la comunità",
+                msg_open: "🤍 “Hyper Realistic non si concentra sulla quantità, cerchiamo le persone giuste per crescere insieme a lungo termine”",
+                footer_q: "“Hyper Realistic rispetta ogni scelta, ci concentriamo sempre su Qualità – Sicurezza – Valore duraturo”"
+            },
+            pt: {
+                doc_subtitle: "PRODUTOS, GUIAS E PARCERIA GLOBAL HYPER REALISTIC",
+                doc_tagline: "Qualidade – Segurança – Sustentabilidade",
+                h_intro: "1. Para Compradores Apenas de Produtos",
+                q_intro: "\"Procura apenas produtos oficiais?\"",
+                p_intro: "Oferecemos linhas de produtos exclusivas para compradores individuais e representantes de marcas em todo o mundo.",
+                h_tech: "2. Sobre Agulhas e Tecnologia Hiperrealistas",
+                p_tech: "Hyper Realistic é uma nova geração de produtos para a indústria de PMU:",
+                li_tech_1: "✅ **Máquina Hyper PMU:** Alta estabilidade de vibração",
+                li_tech_2: "✅ **Agulha Hyper:** Nano precisão, sem invasão profunda",
+                li_tech_3: "✅ **Pigmento Hyper:** Orgânico, sem alteração de cor após a cicatrização",
+                li_tech_4: "✅ **Precisão:** 1 passagem de agulha = 1 pelo completo",
+                li_tech_5: "✅ **Segurança:** Limite de profundidade de 0,3 mm",
+                li_tech_6: "✅ **Sem dormência:** Técnica indolor",
+                h_packs: "3. Pacotes de Produtos",
+                p1_title: "Kit 10 Agulhas",
+                p1_price: "$150",
+                p1_li1: "10x Agulhas Hyper Ultra-finas",
+                p1_li2: "1x Pigmento Hyper",
+                p1_li3: "Guia do utilizador oficial",
+                p1_total: "Total: $150",
+                p2_title: "PACOTE 2: PERSONALIZADO SOB ENCOMENDA (MACHINE 2.0 + AGULHAS)",
+                p2_intro: "Este pacote é totalmente personalizável para artistas que desejam combinar nossa máquina mais recente e aprimorada com a quantidade de agulhas que preferirem.",
+                p2_item1_h: "1. Nova Hyper Realistic PMU Machine 2.0: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: mecanismo de alto torque para traços puros, sem desvio e ultra precisos.",
+                p2_item1_b2: "One-Stroke Saturation: coloração mais rápida e estável, sem arrasto, escorregamento ou vazamento de tinta.",
+                p2_item1_b3: "Ergonomic & Smart: pegada anti-dormência, desenvolvida para sessões longas, equipada com tela OLED e carregamento Type-C prático.",
+                p2_item2_h: "2. Hyper Realistic Needles: Quantidade personalizada",
+                p2_item2_b1: "+ 100 USD a cada conjunto de 25 agulhas. (Diga-nos a quantidade exata de que você precisa!)",
+                p2_gift: "🎁 Presente: vídeo-guia de ajuste de velocidade e otimização da máquina.",
+                p2_note: "📌 Observação: o preço total final e o custo de envio serão confirmados por mensagem direta assim que você definir a quantidade de agulhas.",
+                p3_title: "PACOTE 3: KIT VIP COMPLETO",
+                p3_price: "Preço: 1.000 USD",
+                p3_li1: "1 máquina PMU Hyper Realistic",
+                p3_li2: "2 caixas de agulhas Hyper Realistic (50 un.)",
+                p3_li3: "Kit completo de pigmentos Hyper Color (5 cores)",
+                p3_gift_h: "🎁 VÍDEOS GUIA INCLUÍDOS:",
+                p3_g1: "+ Entender o princípio das agulhas",
+                p3_g2: "+ Ajustar a velocidade da máquina",
+                p3_g3: "+ Evitar erros comuns",
+                p3_note: "*Os vídeos são apenas para orientação.",
+                p3_ship: "🚚 Taxa fixa de envio: 100 USD",
+                p3_fee: "💳 Sem taxa PayPal",
+                h_ship: "4. Envio Internacional",
+                t_ship_pol: "Política de Envio Global",
+                li_ship_1: "DHL/FedEx Express (3-7 dias)",
+                li_ship_2: "Número de seguimento em tempo real",
+                li_ship_3: "Padrões de embalagem segura",
+                h_guide: "5. Como encomendar",
+                s1_t: "Passo 1: Escolher o produto",
+                s1_d: "Escolha o kit ou a quantidade que necessita.",
+                s2_t: "Passo 2: Pagamento via PayPal",
+                s2_d: "Transações globais seguras.",
+                s3_t: "Passo 3: Entrega",
+                s3_d: "Enviamos em 24-48 horas.",
+                guide_note: "Nota: Os produtos não são reembolsáveis após o envio.",
+                h_agent: "6. Recrutamento para Distribuição de Produtos",
+                p_agent: "Torne-se um distribuidor local:",
+                li_ag_1: "Preços de revenda exclusivos",
+                li_ag_2: "Suporte com material de marketing",
+                li_ag_3: "Certificado de distribuidor oficial",
+                t_ben: "Principais benefícios:",
+                li_ben_1: "Margens de lucro elevadas",
+                li_ben_2: "Proteção territorial",
+                li_ben_3: "Desenvolvimento a longo prazo",
+                cta_agent: "📩 Contacte-nos para detalhes",
+                h_roadmap: "7. Roteiro de Desenvolvimento Premium",
+                sub_roadmap: "Torne-se formador Hyper Realistic no seu país",
+                txt_roadmap_1: "O Hyper Realistic visa criar um sistema de **formadores de alta qualidade e representantes nacionais** em todo o mundo.",
+                txt_roadmap_cond: "Após concluir o curso avançado e cumprir os critérios, os alunos podem ser considerados para:",
+                li_rm_1: "Tornar-se um **formador Hyper Realistic certificado**",
+                li_rm_2: "Exibição oficial no sistema da Le Van Academy",
+                li_rm_3: "Representante de ensino Hyper Realistic no seu país/região",
+                txt_roadmap_for: "👉 Para alunos com competências sólidas, visão a longo prazo e profissionalismo",
+                h_recruit: "🌍 Recrutamento Nacional Global e Formadores Especiais",
+                p_recruit: "A Le Van Academy está atualmente a recrutar para:",
+                li_rc_1: "Formador Hyper Realistic",
+                li_rc_2: "Agente nacional exclusivo para produtos e formação",
+                h_benefit: "Benefícios para parceiros de formação",
+                li_bf_1: "Reconhecido como formador/agente oficial",
+                li_bf_2: "Destaque selecionado em canais de media mundiais",
+                li_bf_3: "Suporte em: Materiais de formação, Imagem de marca, Estratégia local",
+                note_crit: "📌 **NOTA:** A aceitação não é automática, mas depende de: Competências, Ética e capacidade de desenvolver a comunidade",
+                msg_open: "🤍 “Hyper Realistic não se foca na quantidade, procuramos as pessoas certas para crescerem juntas a longo prazo”",
+                footer_q: "“Hyper Realistic respeita cada escolha, focamo-nos sempre na Qualidade – Segurança – Valor duradouro”"
+            },
+            id: {
+                doc_subtitle: "PRODUK, PANDUAN & KEMITRAAN GLOBAL HYPER REALISTIC",
+                doc_tagline: "Kualitas – Keamanan – Keberlanjutan",
+                h_intro: "1. Untuk Pembeli Produk Saja",
+                q_intro: "\"Apakah Anda hanya mencari produk resmi?\"",
+                p_intro: "Kami menawarkan lini produk eksklusif untuk pembeli individu dan perwakilan merek di seluruh dunia.",
+                h_tech: "2. Tentang Jarum & Teknologi Hiper Realistis",
+                p_tech: "Hyper Realistic adalah generasi baru produk untuk industri PMU:",
+                li_tech_1: "✅ **Mesin PMU Hyper:** Stabilitas getaran tinggi",
+                li_tech_2: "✅ **Jarum Hyper:** Presisi nano, tidak ada invasi dalam",
+                li_tech_3: "✅ **Pigmen Hyper:** Organik, tidak ada perubahan warna setelah penyembuhan",
+                li_tech_4: "✅ **Presisi:** 1 jalur jarum = 1 rambut utuh",
+                li_tech_5: "✅ **Keamanan:** Batas kedalaman 0,3 mm",
+                li_tech_6: "✅ **Tanpa rasa baal:** Teknik tanpa rasa sakit",
+                h_packs: "3. Paket Produk",
+                p1_title: "Kit 10 Jarum",
+                p1_price: "$150",
+                p1_li1: "10x Jarum Hyper Ultra-tipis",
+                p1_li2: "1x Pigmen Hyper",
+                p1_li3: "Panduan pengguna resmi",
+                p1_total: "Total: $150",
+                p2_title: "PAKET 2: KUSTOM SESUAI PERMINTAAN (MACHINE 2.0 + NEEDLES)",
+                p2_intro: "Paket ini sepenuhnya dapat disesuaikan untuk artist yang ingin memadukan mesin upgrade terbaru kami dengan jumlah jarum yang mereka butuhkan.",
+                p2_item1_h: "1. Hyper Realistic PMU Machine 2.0 Baru: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: mekanisme torsi tinggi untuk hasil goresan yang murni, tanpa drift, dan sangat presisi.",
+                p2_item1_b2: "One-Stroke Saturation: pewarnaan lebih cepat dan lebih stabil tanpa drag, selip, atau kebocoran tinta.",
+                p2_item1_b3: "Ergonomic & Smart: grip anti-kebas yang dirancang untuk sesi panjang, dilengkapi layar OLED dan pengisian Type-C yang praktis.",
+                p2_item2_h: "2. Hyper Realistic Needles: Jumlah sesuai kebutuhan",
+                p2_item2_b1: "+ 100 USD untuk setiap set berisi 25 jarum. (Beri tahu kami jumlah tepat yang Anda butuhkan!)",
+                p2_gift: "🎁 Hadiah: video panduan pengaturan kecepatan dan optimasi mesin.",
+                p2_note: "📌 Catatan: total harga akhir dan biaya pengiriman akan dikonfirmasi melalui direct message setelah Anda menentukan jumlah jarum.",
+                p3_title: "PAKET 3: VIP FULL SET",
+                p3_price: "Harga: 1,000 USD",
+                p3_li1: "1 mesin PMU Hyper Realistic",
+                p3_li2: "2 kotak jarum Hyper Realistic (50 pcs)",
+                p3_li3: "Set lengkap tinta Hyper Color (5 warna)",
+                p3_gift_h: "🎁 VIDEO PANDUAN TERMASUK:",
+                p3_g1: "+ Memahami prinsip kerja jarum",
+                p3_g2: "+ Menyesuaikan kecepatan mesin",
+                p3_g3: "+ Menghindari kesalahan umum",
+                p3_note: "*Video hanya untuk panduan.",
+                p3_ship: "🚚 Biaya pengiriman tetap: 100 USD",
+                p3_fee: "💳 Tanpa biaya PayPal",
+                h_ship: "4. Pengiriman Internasional",
+                t_ship_pol: "Kebijakan Pengiriman Global",
+                li_ship_1: "DHL/FedEx Express (3-7 hari)",
+                li_ship_2: "Nomor pelacakan waktu nyata",
+                li_ship_3: "Standar pengemasan aman",
+                h_guide: "5. Cara Memesan",
+                s1_t: "Langkah 1: Pilih produk",
+                s1_d: "Pilih kit atau jumlah yang Anda butuhkan.",
+                s2_t: "Langkah 2: Pembayaran melalui PayPal",
+                s2_d: "Transaksi global yang aman.",
+                s3_t: "Langkah 3: Pengiriman",
+                s3_d: "Kami mengirimkan dalam waktu 24-48 jam.",
+                guide_note: "Catatan: Produk tidak dapat dikembalikan setelah dikirim.",
+                h_agent: "6. Rekrutmen Distribusi Produk",
+                p_agent: "Menjadi distributor lokal:",
+                li_ag_1: "Harga grosir eksklusif",
+                li_ag_2: "Dukungan materi pemasaran",
+                li_ag_3: "Sertifikat distributor resmi",
+                t_ben: "Manfaat utama:",
+                li_ben_1: "Margin laba tinggi",
+                li_ben_2: "Perlindungan teritorial",
+                li_ben_3: "Pengembangan jangka panjang",
+                cta_agent: "📩 Hubungi kami untuk detailnya",
+                h_roadmap: "7. Peta Jalan Pengembangan Premium",
+                sub_roadmap: "Jadi pelatih Hyper Realistic di negara Anda",
+                txt_roadmap_1: "Hyper Realistic bertujuan untuk menciptakan sistem **pelatih berkualitas tinggi dan perwakilan negara** di seluruh dunia.",
+                txt_roadmap_cond: "Setelah menyelesaikan kursus tingkat lanjut dan memenuhi kriteria, siswa dapat dipertimbangkan untuk:",
+                li_rm_1: "Menjadi **pelatih Hyper Realistic bersertifikat**",
+                li_rm_2: "Tampilan resmi pada sistem Le Van Academy",
+                li_rm_3: "Perwakilan pengajaran Hyper Realistic di negara/wilayah Anda",
+                txt_roadmap_for: "👉 Untuk siswa dengan keterampilan yang solid, visi jangka panjang, dan profesionalisme",
+                h_recruit: "🌍 Rekrutmen Negara Global dan Pelatih Khusus",
+                p_recruit: "Le Van Academy saat ini menerima rekrutmen untuk:",
+                li_rc_1: "Pelatih Hyper Realistic",
+                li_rc_2: "Agen negara eksklusif untuk produk dan pelatihan",
+                h_benefit: "Manfaat bagi mitra pelatihan",
+                li_bf_1: "Diakui sebagai pelatih/agen resmi",
+                li_bf_2: "Fitur terpilih di saluran media global",
+                li_bf_3: "Dukungan pada: Materi pelatihan, Citra merek, Strategi lokal",
+                note_crit: "📌 **CATATAN:** Penerimaan tidak otomatis tetapi tergantung pada: Keterampilan, Etika, dan kemampuan untuk mengembangkan komunitas",
+                msg_open: "🤍 “Hyper Realistic tidak fokus pada kuantitas, kami mencari orang yang tepat untuk tumbuh bersama dalam jangka panjang”",
+                footer_q: "“Hyper Realistic menghormati setiap pilihan, kami selalu fokus pada Kualitas – Keamanan – Nilai Berkelanjutan”"
+            },
+            ar: {
+                doc_subtitle: "المنتجات، الأدلة والشراكة العالمية فائقة الواقعية",
+                doc_tagline: "الجودة – السلامة – الاستدامة",
+                h_intro: "1. لمشتري المنتجات فقط",
+                q_intro: "\"هل تبحث عن المنتجات الرسمية فقط؟\"",
+                p_intro: "نحن نقدم خطوط إنتاج حصرية للمشترين الأفراد وممثلي العلامات التجارية في جميع أنحاء العالم.",
+                h_tech: "2. حول الإبر والتكنولوجيا فائقة الواقعية",
+                p_tech: "Hyper Realistic هو جيل جديد من المنتجات لصناعة PMU:",
+                li_tech_1: "✅ **جهاز Hyper PMU:** ثبات عالي للاختزاز",
+                li_tech_2: "✅ **إبرة Hyper:** دقة نانو، لا يوجد اختراق عميق",
+                li_tech_3: "✅ **صبغة Hyper:** عضوية، لا يتغير اللون بعد الشفاء",
+                li_tech_4: "✅ **الدقة:** مسار إبرة واحدة = شعرة كاملة واحدة",
+                li_tech_5: "✅ **الأمان:** حد العمق 0.3 ملم",
+                li_tech_6: "✅ **بدون تخدير:** تقنية بدون ألم",
+                h_packs: "3. باقات المنتجات",
+                p1_title: "طقم 10 إبر",
+                p1_price: "$150",
+                p1_li1: "10x إبر Hyper فائقة الدقة",
+                p1_li2: "1x صبغة Hyper",
+                p1_li3: "دليل المستخدم الرسمي",
+                p1_total: "المجموع: $150",
+                p2_title: "الباقة 2: تخصيص حسب الطلب (MACHINE 2.0 + NEEDLES)",
+                p2_intro: "هذه الباقة قابلة للتخصيص بالكامل للفنانين الذين يرغبون في إقران أحدث آلة مطورة لدينا بالكمية التي يفضلونها من الإبر.",
+                p2_item1_h: "1. جهاز Hyper Realistic PMU Machine 2.0 الجديد: 500 USD",
+                p2_item1_b1: "Advanced Linear Drive: آلية عالية العزم تمنحك ضربات نقية، من دون انحراف، وبأقصى درجات الدقة.",
+                p2_item1_b2: "One-Stroke Saturation: تلوين أسرع وأكثر ثباتا، من دون سحب أو انزلاق أو تسرب للحبر.",
+                p2_item1_b3: "Ergonomic & Smart: قبضة مضادة للتنميل مصممة للجلسات الطويلة، ومزودة بشاشة OLED وشحن Type-C العملي.",
+                p2_item2_h: "2. Hyper Realistic Needles: كمية مخصصة",
+                p2_item2_b1: "+ 100 USD لكل مجموعة من 25 إبرة. (أخبرنا بالكمية الدقيقة التي تحتاجها!)",
+                p2_gift: "🎁 هدية: فيديو إرشادي لضبط السرعة وتحسين أداء الجهاز.",
+                p2_note: "📌 ملاحظة: سيتم تأكيد السعر الإجمالي النهائي وتكلفة الشحن عبر الرسائل المباشرة بعد أن تحدد كمية الإبر الخاصة بك.",
+                p3_title: "الباقة 3: مجموعة VIP الكاملة",
+                p3_price: "السعر: 1,000 USD",
+                p3_li1: "جهاز PMU Hyper Realistic واحد",
+                p3_li2: "علبتان من إبر Hyper Realistic (50 قطعة)",
+                p3_li3: "مجموعة كاملة من أحبار Hyper Color (5 ألوان)",
+                p3_gift_h: "🎁 فيديوهات إرشادية مرفقة:",
+                p3_g1: "+ فهم مبدأ عمل الإبر",
+                p3_g2: "+ تعلم ضبط سرعة الجهاز",
+                p3_g3: "+ تجنب الأخطاء الشائعة",
+                p3_note: "*الفيديوهات مخصصة للإرشاد فقط.",
+                p3_ship: "🚚 رسوم شحن ثابتة: 100 USD",
+                p3_fee: "💳 بدون رسوم PayPal",
+                h_ship: "4. الشحن الدولي",
+                t_ship_pol: "سياسة الشحن العالمية",
+                li_ship_1: "DHL/FedEx Express (3-7 أيام)",
+                li_ship_2: "رقم تتبع في الوقت الحقيقي",
+                li_ship_3: "معايير تغليف آمنة",
+                h_guide: "5. كيفية الطلب",
+                s1_t: "الخطوة 1: اختر المنتج",
+                s1_d: "اختر الطقم أو الكمية التي تحتاجها.",
+                s2_t: "الخطوة 2: الدفع عبر PayPal",
+                s2_d: "معاملات عالمية آمنة.",
+                s3_t: "الخطوة 3: التسليم",
+                s3_d: "نشحن خلال 24-48 ساعة.",
+                guide_note: "ملاحظة: المنتجات غير قابلة للاسترداد بمجرد شحنها.",
+                h_agent: "6. توظيف موزعي المنتجات",
+                p_agent: "كن موزعاً محلياً:",
+                li_ag_1: "أسعار جملة حصرية",
+                li_ag_2: "دعم المواد التسويقية",
+                li_ag_3: "شهادة موزع رسمي",
+                t_ben: "المزايا الرئيسية:",
+                li_ben_1: "هوامش ربح عالية",
+                li_ben_2: "حماية المنطقة",
+                li_ben_3: "تطوير طويل الأمد",
+                cta_agent: "📩 اتصل بنا للحصول على التفاصيل",
+                h_roadmap: "7. خارطة طريق التطوير المميز",
+                sub_roadmap: "كن مدرب Hyper Realistic في بلدك",
+                txt_roadmap_1: "يهدف Hyper Realistic إلى إنشاء نظام من **المدربين ذوي الجودة العالية وممثلي الدول** في جميع أنحاء العالم.",
+                txt_roadmap_cond: "بعد الانتهاء من الدورة المتقدمة واستيفاء المعايير، يمكن النظر في الطلاب لـ:",
+                li_rm_1: "تصبح **مدرباً معتمداً من Hyper Realistic**",
+                li_rm_2: "عرض رسمي في نظام أكاديمية لي فان",
+                li_rm_3: "ممثل تعليم Hyper Realistic في بلدك/منطقتك",
+                txt_roadmap_for: "👉 للطلاب ذوي المهارات الصلبة والرؤية طويلة الأمد والاحترافية",
+                h_recruit: "🌍 التوظيف العالمي للدول والمدربين الخاصين",
+                p_recruit: "أكاديمية لي فان تقوم حالياً بالتوظيف لـ:",
+                li_rc_1: "مدرب Hyper Realistic",
+                li_rc_2: "وكيل دولة حصري للمنتجات والتدريب",
+                h_benefit: "مزايا لشركاء التدريب",
+                li_bf_1: "معترف به كمدرب/وكيل رسمي",
+                li_bf_2: "عرض مختار على القنوات الإعلامية العالمية",
+                li_bf_3: "الدعم في: مواد التدريب، صورة العلامة التجارية، الاستراتيجية المحلية",
+                note_crit: "📌 **ملاحظة:** القبول ليس تلقائياً ولكنه يعتمد على: المهارات والأخلاق والقدرة على تطوير المجتمع",
+                msg_open: "🤍 “Hyper Realistic لا يركز على الكمية، نحن نبحث عن الأشخاص المناسبين للنمو معاً على المدى الطويل”",
+                footer_q: "“Hyper Realistic يحترم كل خيار، ونحن نركز دائماً على الجودة – السلامة – القيمة المستدامة”"
+            }
+        };
+
+        // English fallback if something missing in a specific language
+        Object.keys(translations).forEach(lang => {
+            if (lang !== 'en') {
+                Object.keys(translations.en).forEach(key => {
+                    if (!translations[lang][key]) translations[lang][key] = translations.en[key];
+                });
+            }
+        });
+
+        const countryToLang = {
+            'VN': 'vi', 'KR': 'kr', 'JP': 'jp', 'CN': 'zh', 'TW': 'zh', 'HK': 'zh', 'FR': 'fr',
+            'DE': 'de', 'AT': 'de', 'CH': 'de', 'ES': 'es', 'MX': 'es', 'AR': 'es', 'CO': 'es',
+            'CL': 'es', 'PE': 'es', 'RU': 'ru', 'UA': 'ru', 'KZ': 'ru', 'BY': 'ru', 'IT': 'it',
+            'PT': 'pt', 'BR': 'pt', 'TH': 'th', 'ID': 'id', 'SA': 'ar', 'AE': 'ar', 'EG': 'ar',
+            'KW': 'ar', 'QA': 'ar', 'IQ': 'ar', 'DZ': 'ar', 'MA': 'ar', 'US': 'en', 'GB': 'en',
+            'CA': 'en', 'AU': 'en', 'NZ': 'en'
+        };
+
+        function changeLang(lang) {
+            const t = translations[lang] || translations.en;
+            console.log('Switching to language:', lang);
+
+            if (lang === 'ar') document.body.setAttribute('dir', 'rtl');
+            else document.body.removeAttribute('dir');
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    el.innerHTML = t[key];
+                }
+            });
+
+            const select = document.getElementById('lang-select');
+            if (select) select.value = lang;
+        }
+
+        function initSwipeGalleries() {
+            document.querySelectorAll('[data-gallery]').forEach(gallery => {
+                const track = gallery.querySelector('.gallery-track');
+                const slides = Array.from(gallery.querySelectorAll('.gallery-slide'));
+                const prevButton = gallery.querySelector('[data-gallery-prev]');
+                const nextButton = gallery.querySelector('[data-gallery-next]');
+                const counter = gallery.querySelector('.gallery-counter');
+
+                if (!track || slides.length <= 1) {
+                    gallery.classList.add('single');
+                    return;
+                }
+
+                const updateCounter = () => {
+                    const slideWidth = Math.max(track.clientWidth, 1);
+                    const currentIndex = Math.min(
+                        slides.length - 1,
+                        Math.max(0, Math.round(track.scrollLeft / slideWidth))
+                    );
+
+                    if (counter) counter.textContent = `${currentIndex + 1}/${slides.length}`;
+                };
+
+                const scrollToSlide = direction => {
+                    const slideWidth = Math.max(track.clientWidth, 1);
+                    const currentIndex = Math.min(
+                        slides.length - 1,
+                        Math.max(0, Math.round(track.scrollLeft / slideWidth))
+                    );
+                    const nextIndex = Math.min(slides.length - 1, Math.max(0, currentIndex + direction));
+
+                    track.scrollTo({
+                        left: slides[nextIndex].offsetLeft,
+                        behavior: 'smooth'
+                    });
+                };
+
+                if (prevButton) prevButton.addEventListener('click', () => scrollToSlide(-1));
+                if (nextButton) nextButton.addEventListener('click', () => scrollToSlide(1));
+
+                track.addEventListener('scroll', updateCounter, { passive: true });
+                window.addEventListener('resize', updateCounter);
+                updateCounter();
+            });
+        }
+
+        async function detectAndSetLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const forceDetect = urlParams.get('detect') === 'true';
+            const savedLang = localStorage.getItem('site_lang_preference');
+
+            console.log('Detecting language. Force detect:', forceDetect, 'Saved preference:', savedLang);
+
+            /* Debugging: Temporarily ignoring saved preference
+            if (!forceDetect && savedLang && translations[savedLang]) {
+                console.log('Using saved preference:', savedLang);
+                changeLang(savedLang);
+                return;
+            }
+            */
+
+            try {
+                console.log('No saved preference or valid. Fetching IP info...');
+                const response = await fetch('https://ipwho.is/');
+                const data = await response.json();
+                console.log('IP Data received:', data);
+
+                if (data.success) {
+                    const countryCode = data.country_code;
+                    const detectedLang = countryToLang[countryCode] || 'en';
+                    console.log('Detected country:', countryCode, '-> Setting language:', detectedLang);
+                    changeLang(detectedLang);
+                } else {
+                    console.log('IP detection failed, falling back to English');
+                    changeLang('en');
+                }
+            } catch (error) {
+                console.error('Error in IP detection:', error);
+                changeLang('en');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initSwipeGalleries();
+            detectAndSetLanguage();
+            const select = document.getElementById('lang-select');
+            if (select) {
+                select.addEventListener('change', function () {
+                    localStorage.setItem('site_lang_preference', this.value);
+                    changeLang(this.value);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
